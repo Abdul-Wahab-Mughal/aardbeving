@@ -10,7 +10,7 @@ import DuurzaamHerstel from "./page/DuurzaamHerstel";
 import VastlopendeTrajecten from "./page/VastlopendeTrajecten";
 import OverAAB from "./page/OverAAB";
 import NotFound from "./page/NotFound";
-import Index from "./page";
+import Home from "./page/home";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -27,7 +27,7 @@ function App() {
       <ScrollToTop />
       <Header navItems={navItems} />
       <Routes>
-        <Route path="/" element={<Index />} />
+        <Route path="/" element={<Home />} />
         <Route path="/img-traject" element={<ImgTraject />} />
         <Route path="/ncg-traject" element={<NCGTraject />} />
         <Route path="/duurzaam-herstel" element={<DuurzaamHerstel />} />
