@@ -4,7 +4,7 @@ import Testimonials from "@/components/section/Testimonials";
 import Traject from "@/components/section/Traject";
 import React from "react";
 
-export default function Home() {
+export default function Index() {
   return (
     <main className="bg-white">
       <Bannar

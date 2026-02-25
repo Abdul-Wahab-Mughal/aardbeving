@@ -4,13 +4,13 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ui/ScrollToTop";
 
-import Home from "./page/home";
 import ImgTraject from "./page/ImgTraject";
 import NCGTraject from "./page/NCGTraject";
 import DuurzaamHerstel from "./page/DuurzaamHerstel";
 import VastlopendeTrajecten from "./page/VastlopendeTrajecten";
 import OverAAB from "./page/OverAAB";
 import NotFound from "./page/NotFound";
+import Index from "./page";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -27,7 +27,7 @@ function App() {
       <ScrollToTop />
       <Header navItems={navItems} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Index />} />
         <Route path="/img-traject" element={<ImgTraject />} />
         <Route path="/ncg-traject" element={<NCGTraject />} />
         <Route path="/duurzaam-herstel" element={<DuurzaamHerstel />} />
