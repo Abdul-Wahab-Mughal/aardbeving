@@ -20,11 +20,26 @@ export default function Points({ points, title }) {
                 className="w-full h-56 object-cover rounded-sm"
               />
             </div>
-            <div className="w-full md:w-4/6 space-y-2 text-black border-2 border-[--border] group">
-              <div className="border-2 border-[--border] p-2.5 translate-x-2.5 -translate-y-2.5 bg-white group-hover:bg-[--background_box] duration-500">
-                <h3 className=" text-xl font-bold group-hover:text-white duration-500">{point.title}</h3>
-                <p className=" leading-normal group-hover:text-white duration-500">{point.description}</p>
+            <div className="w-full md:w-4/6">
+              <div className="w-full space-y-2 text-black border-2 border-[--border] group bg-[--background_box]">
+                <div className="border-2 border-[--border] p-2.5 translate-x-2.5 -translate-y-2.5 bg-white group-hover:bg-[--background_box] duration-500">
+                  <h3 className=" text-xl font-bold group-hover:text-white duration-500">
+                    {point.title}
+                  </h3>
+                  <p className=" leading-normal group-hover:text-white duration-500">
+                    {point.description}
+                  </p>
+                </div>
               </div>
+              <a
+                href="/contact"
+                className="flex group text-black mx-auto w-fit mt-2.5 gap-2.5 border-2 border-[--border] py-1 p-5 rounded"
+              >
+                contact
+                <div className=" group-hover:translate-x-2.5 duration-500">
+                  →
+                </div>
+              </a>
             </div>
           </div>
         ))}
