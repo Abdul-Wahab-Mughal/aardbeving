@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo.png";
 
 export default function Header({ navItems }) {
   const location = useLocation();
@@ -9,7 +9,7 @@ export default function Header({ navItems }) {
 
   return (
     <nav className="sticky top-0 z-50 bg-white backdrop-blur border-b-[15px] border-[--border]">
-      <div className=" px-5 lg:px-20 flex justify-between m-auto container">
+      <div className=" px-5 lg:px-10 xl:px-20 flex justify-between m-auto container">
         <Link to="/" className="flex-shrink-0 pt-2">
           <img
             src={logo}

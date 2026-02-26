@@ -50,7 +50,7 @@ export default function Traject() {
         {traject.map((t) => (
           <div
             key={t.path}
-            className={`${t.bg} rounded-sm overflow-hidden flex flex-col`}
+            className={`${t.bg} rounded-sm overflow-hidden flex flex-col relative`}
           >
             <img
               src={t.image}
@@ -61,12 +61,8 @@ export default function Traject() {
               <h3 className="font-display font-semibold text-black mb-2">
                 {t.title}
               </h3>
-              <p className="text-sm text-black mb-5">
-                {t.question}
-              </p>
-              <p className="text-sm text-black flex-1 mb-5">
-                {t.description}
-              </p>
+              <p className="text-sm text-black mb-5">{t.question}</p>
+              <p className="text-sm text-black flex-1 mb-5">{t.description}</p>
               <a
                 href={t.path}
                 className="text-sm font-medium text-red-300 hover:opacity-80 transition-opacity"
@@ -74,6 +70,7 @@ export default function Traject() {
                 Lees meer →
               </a>
             </div>
+            <a href={t.path} className=" absolute inset-0"></a>
           </div>
         ))}
       </div>

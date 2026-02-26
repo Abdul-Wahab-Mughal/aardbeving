@@ -4,13 +4,14 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ui/ScrollToTop";
 
+import Home from "./page/home";
 import ImgTraject from "./page/ImgTraject";
 import NCGTraject from "./page/NCGTraject";
 import DuurzaamHerstel from "./page/DuurzaamHerstel";
 import VastlopendeTrajecten from "./page/VastlopendeTrajecten";
 import OverAAB from "./page/OverAAB";
+import Contact from "./page/Contact";
 import NotFound from "./page/NotFound";
-import Home from "./page/home";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -19,6 +20,7 @@ const navItems = [
   { label: "Duurzaam herstel", path: "/duurzaam-herstel" },
   { label: "Vastgelopen trajecten", path: "/vastgelopen-trajecten" },
   { label: "Over AAB", path: "/over-aab" },
+  { label: "Contact", path: "/contact" },
 ];
 
 function App() {
@@ -36,6 +38,7 @@ function App() {
           element={<VastlopendeTrajecten />}
         />
         <Route path="/over-aab" element={<OverAAB />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer navItems={navItems} />
