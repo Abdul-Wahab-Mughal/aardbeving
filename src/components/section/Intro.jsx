@@ -4,7 +4,7 @@ import TitleBox from "../ui/titleBox";
 export default function Intro() {
   return (
     <section>
-      <TitleBox title="Loopt uw aardbevingsdossier vast?" />
+      <TitleBox title="Loopt uw aardbevingsdossier vast" q="?" />
       <div className=" py-12 max-w-4xl m-auto text-center space-y-4 px-5 lg:px-20 text-black ">
         <p className="text-[--muted-foreground] leading-relaxed">
           Heeft u te maken met aardbevingsschade, versterking of duurzaam

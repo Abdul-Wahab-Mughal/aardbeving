@@ -1,6 +1,7 @@
 import React from "react";
 import TitleBox from "../ui/titleBox";
 import heroBg from "@/assets/hero-bg.jpg";
+import { Link } from "react-router-dom";
 
 const testimonials = [
   {
@@ -43,9 +44,12 @@ export default function Testimonials() {
                 <p className=" text-sm text-muted-foreground italic mb-3">
                   {t.text}
                 </p>
-                <span className=" text-red-300 text-sm font-medium text-link-accent">
-                  Lees meer →
-                </span>
+                <Link to="#" className=" text-red-300 text-sm font-medium text-link-accent group flex w-fit">
+                  Lees meer
+                  <div className=" group-hover:translate-x-2.5 duration-500">
+                    →
+                  </div>
+                </Link>
               </div>
             </div>
           ))}

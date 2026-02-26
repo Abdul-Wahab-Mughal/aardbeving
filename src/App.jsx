@@ -25,7 +25,7 @@ const navItems = [
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <ScrollToTop />
       <Header navItems={navItems} />
       <Routes>

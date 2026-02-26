@@ -50,7 +50,7 @@ export default function Traject() {
         {traject.map((t) => (
           <div
             key={t.path}
-            className={`${t.bg} rounded-sm overflow-hidden flex flex-col relative`}
+            className={`${t.bg} rounded-sm overflow-hidden flex flex-col relative hover:scale-105 duration-500 group`}
           >
             <img
               src={t.image}
@@ -63,12 +63,11 @@ export default function Traject() {
               </h3>
               <p className="text-sm text-black mb-5">{t.question}</p>
               <p className="text-sm text-black flex-1 mb-5">{t.description}</p>
-              <a
-                href={t.path}
-                className="text-sm font-medium text-red-300 hover:opacity-80 transition-opacity"
+              <div
+                className="text-sm font-medium text-red-300 hover:opacity-80 transition-opacity flex"
               >
-                Lees meer →
-              </a>
+                Lees meer <div className=" group-hover:translate-x-2.5 duration-500">→</div>
+              </div>
             </div>
             <a href={t.path} className=" absolute inset-0"></a>
           </div>

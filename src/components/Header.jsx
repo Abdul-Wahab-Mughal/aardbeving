@@ -14,7 +14,7 @@ export default function Header({ navItems }) {
           <img
             src={logo}
             alt="Aardbeving Adviesbureau"
-            className="h-16 w-auto"
+            className="h-20 w-auto"
           />
         </Link>
 

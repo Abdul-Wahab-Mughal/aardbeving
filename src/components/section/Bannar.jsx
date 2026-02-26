@@ -3,7 +3,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 export default function Bannar({ title }) {
   return (
-    <section className="relative h-[80vh] min-h-[500px] max-h-[1000px] flex items-center justify-center border-b-8 border-white">
+    <section className="relative h-[88vh] min-h-[500px] max-h-[1000px] flex items-center justify-center border-b-8 border-white">
       <img
         src={heroBg}
         alt="Aardbevingsschade Groningen"
