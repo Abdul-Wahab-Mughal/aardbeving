@@ -3,17 +3,19 @@ import herobg from "../assets/hero-bg.jpg";
 import { ChevronRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@radix-ui/react-label";
 
 export default function Context() {
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(1);
+  const [submit, setSubmit] = useState(true);
 
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    traject: "",
-    problem: "",
-    status: [],
+    // name: "",
+    // email: "",
+    // phone: "",
+    // traject: "",
+    // problem: "",
+    // status: [],
   });
 
   const nextStep = () => setStep(step + 1);
@@ -22,27 +24,14 @@ export default function Context() {
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
-    if (type === "checkbox") {
-      if (checked) {
-        setFormData({
-          ...formData,
-          status: [...formData.status, value],
-        });
-      } else {
-        setFormData({
-          ...formData,
-          status: formData.status.filter((item) => item !== value),
-        });
-      }
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
     alert("Form submitted!");
+    setSubmit(false);
   };
 
   function scrollup() {
@@ -87,18 +76,18 @@ export default function Context() {
       {/* contact  */}
       <section id="contact" className=" p-5 bg-[--background_box]">
         <div className="bg-white p-5 md:p-10 rounded-xl text-black">
-          <h2>Step {step}</h2>
-
-          <form onSubmit={handleSubmit}>
-            <div className="space-y-5">
-              <h2 className="text-[--background_box] text-xl md:text-4xl font-semibold uppercase">
-                Vragen, Opmerkingen of aanvragen voor nieuwe projecten?
-              </h2>
-              <p>
-                Kom in contact met ons en laat je vraag achter via dit
-                contactformulier.
-              </p>
-              {/* STEP 0 */}
+          {submit && <h2>Step {step}</h2>}
+          {submit ? (
+            <form onSubmit={handleSubmit}>
+              <div className="space-y-5">
+                <h2 className="text-[--background_box] text-xl md:text-4xl font-semibold uppercase">
+                  Vragen, Opmerkingen of aanvragen voor nieuwe projecten?
+                </h2>
+                <p className="pb-5">
+                  Kom in contact met ons en laat je vraag achter via dit
+                  contactformulier.
+                </p>
+                {/* STEP 0
               {step === 0 && (
                 <div className="space-y-5">
                   <div className="flex gap-5">
@@ -144,128 +133,461 @@ export default function Context() {
                     </label>
                   </p>
                 </div>
-              )}
+              )} */}
 
-              {/* STEP 1 */}
-              {step === 1 && (
-                <>
-                  <h3>1. Met welk traject heeft u te maken?</h3>
+                {/* STEP 1 */}
+                {step === 1 && (
+                  <>
+                    <h3 className="text-2xl font-bold">
+                      1. Met welk traject heeft u te maken?
+                    </h3>
 
-                  <label>
-                    <input
-                      type="radio"
-                      name="traject"
-                      value="IMG – Schade"
+                    <div className="flex flex-col text-xl">
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="traject"
+                          value="IMG – Schade"
+                          onChange={handleChange}
+                          className="bg-transparent"
+                        />
+                        IMG – Schade
+                      </Label>
+
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="traject"
+                          value="NCG – Versterking"
+                          onChange={handleChange}
+                        />
+                        NCG – Versterking
+                      </Label>
+
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="traject"
+                          value="Duurzaam herstel"
+                          onChange={handleChange}
+                        />
+                        Duurzaam herstel
+                      </Label>
+                    </div>
+                  </>
+                )}
+
+                {/* STEP 2 */}
+                {step === 2 && (
+                  <>
+                    <h3 className="text-2xl font-bold">
+                      2. Waar loopt u vast?
+                    </h3>
+
+                    <Textarea
+                      name="problem"
+                      placeholder="Beschrijf uw situatie..."
+                      value={formData.problem}
                       onChange={handleChange}
+                      required
+                      rows="5"
+                      className="border-0 border-b-2 border-[--background_box]"
+                      style={{ width: "100%" }}
                     />
-                    IMG – Schade
-                  </label>
-                  <br />
+                  </>
+                )}
 
-                  <label>
-                    <input
-                      type="radio"
-                      name="traject"
-                      value="NCG – Versterking"
-                      onChange={handleChange}
-                    />
-                    NCG – Versterking
-                  </label>
-                  <br />
+                {/* STEP 3 */}
+                {step === 3 && (
+                  <>
+                    <h3 className="text-2xl font-bold">
+                      3. Wat is al gebeurd?
+                    </h3>
 
-                  <label>
-                    <input
-                      type="radio"
-                      name="traject"
-                      value="Duurzaam herstel"
-                      onChange={handleChange}
-                    />
-                    Duurzaam herstel
-                  </label>
-                </>
-              )}
+                    <div className="flex flex-col text-xl">
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="status"
+                          value="Er is een opname of rapport opgest"
+                          onChange={handleChange}
+                        />
+                        Er is een opname of rapport opgesteld
+                      </Label>
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="status"
+                          value="Er is een besluit genomen"
+                          onChange={handleChange}
+                        />
+                        Er is een besluit genomen
+                      </Label>
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="status"
+                          value="Ik ben het niet eens met het besluit"
+                          onChange={handleChange}
+                        />
+                        Ik ben het niet eens met het besluit
+                      </Label>
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="status"
+                          value="Er loopt bezwaar of procedure"
+                          onChange={handleChange}
+                        />
+                        Er loopt bezwaar of procedure
+                      </Label>
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="status"
+                          value="Herstel is uitgevoerd maar problemen blijven"
+                          onChange={handleChange}
+                        />
+                        Herstel is uitgevoerd maar problemen blijven
+                      </Label>
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="status"
+                          value="Nog geen formeel besluit"
+                          onChange={handleChange}
+                        />
+                        Nog geen formeel besluit
+                      </Label>
+                    </div>
+                  </>
+                )}
 
-              {/* STEP 2 */}
-              {step === 2 && (
-                <>
-                  <h3>2. Waar loopt u vast?</h3>
+                {/* STEP 4 */}
+                {step === 4 && (
+                  <>
+                    <h3 className="text-2xl font-bold">
+                      4. Waar heeft u behoefte aan?
+                    </h3>
 
-                  <textarea
-                    name="problem"
-                    placeholder="Beschrijf uw situatie..."
-                    value={formData.problem}
-                    onChange={handleChange}
-                    required
-                    rows="5"
-                    style={{ width: "100%" }}
-                  />
-                </>
-              )}
+                    <div className="flex flex-col text-xl">
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="status"
+                          value="Onafhankelijke technische beoordeling"
+                          onChange={handleChange}
+                        />
+                        Onafhankelijke technische beoordeling
+                      </Label>
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="status"
+                          value="Second opinion op rapport of advies"
+                          onChange={handleChange}
+                        />
+                        Second opinion op rapport of advies
+                      </Label>
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="status"
+                          value=" Inzicht in samenhang van mijn dossier"
+                          onChange={handleChange}
+                        />
+                        Inzicht in samenhang van mijn dossier
+                      </Label>
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="status"
+                          value="Technische onderbouwing richting instantie"
+                          onChange={handleChange}
+                        />
+                        Technische onderbouwing richting instantie
+                      </Label>
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="status"
+                          value=" Duiding van mijn mogelijkheden"
+                          onChange={handleChange}
+                        />
+                        Duiding van mijn mogelijkheden
+                      </Label>
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="status"
+                          value=" Ik weet het nog niet precies"
+                          onChange={handleChange}
+                        />
+                        Ik weet het nog niet precies
+                      </Label>
+                    </div>
+                  </>
+                )}
 
-              {/* STEP 3 */}
-              {step === 3 && (
-                <>
-                  <h3>3. Wat is al gebeurd?</h3>
+                {/* STEP 5 */}
+                {step === 5 && (
+                  <div className="space-y-5">
+                    <h3 className="text-2xl font-bold">5. Gegevens woning</h3>
 
-                  <label>
-                    <input
-                      type="checkbox"
-                      value="Opname of rapport opgesteld"
-                      onChange={handleChange}
-                    />
-                    Er is een opname of rapport opgesteld
-                  </label>
-                  <br />
+                    <div>
+                      <Label>Adres woning</Label>
+                      <Input
+                        type="text"
+                        name="address"
+                        value={formData.address}
+                        onChange={handleChange}
+                        placeholder="Straat + huisnummer"
+                        required
+                        className="border-0 !border-b-2 border-[--background_box]"
+                      />
+                    </div>
+                    <div>
+                      <Label>Postcode en plaats</Label>
+                      <Input
+                        type="text"
+                        name="postalPlace"
+                        value={formData.postalPlace}
+                        onChange={handleChange}
+                        placeholder="1234 AB Plaats"
+                        required
+                        className="border-0 !border-b-2 border-[--background_box] max-w-44"
+                      />
+                    </div>
 
-                  <label>
-                    <input
-                      type="checkbox"
-                      value="Besluit genomen"
-                      onChange={handleChange}
-                    />
-                    Er is een besluit genomen
-                  </label>
-                  <br />
+                    <h4 className="text-xl font-bold">Type woning</h4>
 
-                  <label>
-                    <input
-                      type="checkbox"
-                      value="Bezwaar loopt"
-                      onChange={handleChange}
-                    />
-                    Er loopt bezwaar of procedure
-                  </label>
-                </>
-              )}
+                    <div className="flex flex-col text-xl">
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="houseType"
+                          value="Vrijstaand"
+                          checked={formData.houseType === "Vrijstaand"}
+                          onChange={handleChange}
+                        />
+                        Vrijstaand
+                      </Label>
 
-              <div className="flex justify-between">
-                <button
-                  type="button"
-                  onClick={prevStep}
-                  className=" uppercase px-5 py-2.5 bg-[--background_box] rounded-full text-white"
-                >
-                  Back
-                </button>
-                <button
-                  type="button"
-                  onClick={nextStep}
-                  className={`${
-                    step === 3 && "hidden"
-                  } uppercase px-5 py-2.5 bg-[--background_box] rounded-full text-white`}
-                >
-                  Next
-                </button>
-                <button
-                  type="submit"
-                  className={`${
-                    step !== 3 && "hidden"
-                  } uppercase px-5 py-2.5 bg-[--background_box] rounded-full text-white`}
-                >
-                  Verstuur aanvraag
-                </button>
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="houseType"
+                          value="Twee-onder-een-kap"
+                          checked={formData.houseType === "Twee-onder-een-kap"}
+                          onChange={handleChange}
+                        />
+                        Twee-onder-een-kap
+                      </Label>
+
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="houseType"
+                          value="Rijwoning"
+                          checked={formData.houseType === "Rijwoning"}
+                          onChange={handleChange}
+                        />
+                        Rijwoning
+                      </Label>
+
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="houseType"
+                          value="Boerderij"
+                          checked={formData.houseType === "Boerderij"}
+                          onChange={handleChange}
+                        />
+                        Boerderij
+                      </Label>
+
+                      <Label className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="houseType"
+                          value="Anders"
+                          checked={formData.houseType === "Anders"}
+                          onChange={handleChange}
+                        />
+                        Anders
+                      </Label>
+                    </div>
+                  </div>
+                )}
+
+                {/* STEP 6 */}
+                {step === 6 && (
+                  <div className="space-y-5">
+                    <h3 className="text-2xl font-bold">
+                      6. Uw contactgegevens
+                    </h3>
+
+                    <div className="flex gap-5">
+                      <div className="flex-1">
+                        <Label>Naam</Label>
+                        <Input
+                          type="text"
+                          name="contactName"
+                          value={formData.contactName}
+                          onChange={handleChange}
+                          placeholder="Uw naam"
+                          required
+                          className="border-0 !border-b-2 border-[--background_box]"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <Label>Telefoonnummer</Label>
+                        <Input
+                          type="tel"
+                          name="contactPhone"
+                          value={formData.contactPhone}
+                          onChange={handleChange}
+                          placeholder="06 12345678"
+                          required
+                          className="border-0 !border-b-2 border-[--background_box] "
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <Label>E-mailadres</Label>
+                      <Input
+                        type="email"
+                        name="contactEmail"
+                        value={formData.contactEmail}
+                        onChange={handleChange}
+                        placeholder="voorbeeld@email.nl"
+                        required
+                        className="border-0 !border-b-2 border-[--background_box]"
+                      />
+                    </div>
+
+                    <h4 className="text-xl font-bold">Voorkeur voor contact</h4>
+
+                    <div className="flex flex-col text-xl">
+                      <Label className="flex gap-2">
+                        <input
+                          type="radio"
+                          name="contactPreference"
+                          value="Telefonisch"
+                          checked={formData.contactPreference === "Telefonisch"}
+                          onChange={handleChange}
+                        />
+                        Telefonisch
+                      </Label>
+
+                      <Label className="flex gap-2">
+                        <input
+                          type="radio"
+                          name="contactPreference"
+                          value="E-mail"
+                          checked={formData.contactPreference === "E-mail"}
+                          onChange={handleChange}
+                        />
+                        E-mail
+                      </Label>
+
+                      <Label className="flex gap-2">
+                        <input
+                          type="radio"
+                          name="contactPreference"
+                          value="Online gesprek"
+                          checked={
+                            formData.contactPreference === "Online gesprek"
+                          }
+                          onChange={handleChange}
+                        />
+                        Online gesprek
+                      </Label>
+                    </div>
+                  </div>
+                )}
+
+                {/* STEP 7 */}
+                {step === 7 && (
+                  <div className="space-y-6">
+                    <h3 className="text-2xl font-bold">7. Verklaring</h3>
+
+                    <div className="flex flex-col text-lg gap-4">
+                      <Label className="flex gap-3 items-start">
+                        <input
+                          type="checkbox"
+                          name="declarationIndependent"
+                          checked={formData.declarationIndependent}
+                          onChange={handleChange}
+                        />
+                        Ik begrijp dat AAB onafhankelijk technisch advies geeft
+                        en geen besluitvormende instantie is.
+                      </Label>
+
+                      <Label className="flex gap-3 items-start">
+                        <input
+                          type="checkbox"
+                          name="declarationPrivacy"
+                          checked={formData.declarationPrivacy}
+                          onChange={handleChange}
+                        />
+                        Ik ga akkoord met verwerking van mijn gegevens conform
+                        de privacyverklaring.
+                      </Label>
+                    </div>
+                  </div>
+                )}
+
+                <div className="flex justify-between">
+                  <button
+                    type="button"
+                    onClick={prevStep}
+                    className={`${
+                      step === 1 && " opacity-0 pointer-events-none"
+                    } uppercase px-5 py-1.5 bg-[--background_box] rounded-full text-white`}
+                  >
+                    Back
+                  </button>
+                  <button
+                    type="button"
+                    onClick={nextStep}
+                    className={`${
+                      step === 7 && "hidden"
+                    } uppercase px-5 py-1.5 bg-[--background_box] rounded-full text-white`}
+                  >
+                    Next
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={
+                      !formData.declarationIndependent ||
+                      !formData.declarationPrivacy
+                    }
+                    className={`${
+                      step !== 7 && "hidden"
+                    } uppercase px-5 py-2.5 rounded-full text-white ${
+                      formData.declarationIndependent &&
+                      formData.declarationPrivacy
+                        ? "bg-[--background_box]"
+                        : "bg-gray-400 cursor-not-allowed"
+                    }`}
+                  >
+                    Verstuur aanvraag
+                  </button>
+                </div>
               </div>
+            </form>
+          ) : (
+            <div className="text-sm text-gray-600 leading-relaxed pt-4 border-t text-center">
+              {/* Closing Text */}
+              <p>Na ontvangst beoordelen wij uw aanvraag inhoudelijk.</p>
+              <p className="mt-2">
+                Indien uw situatie binnen onze expertise valt, nemen wij contact
+                met u op voor een eerste gesprek.
+              </p>
             </div>
-          </form>
+          )}
         </div>
       </section>
     </main>
