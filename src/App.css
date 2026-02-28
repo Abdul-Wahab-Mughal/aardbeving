@@ -27,3 +27,37 @@ main {
     animation: logo-spin infinite 20s linear;
   }
 }
+
+/* Remove default radio style */
+.custom-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: auto;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  background-color: #ffffff; /* white default */
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+/* When checked → red background */
+.custom-radio:checked {
+  background-color: white; /* red */
+  border-color: rgb(54, 80, 97);
+}
+
+/* Optional: small white dot inside */
+.custom-radio:checked::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgb(54, 80, 97);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
