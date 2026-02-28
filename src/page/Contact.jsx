@@ -1,36 +1,112 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import herobg from "../assets/hero-bg.jpg";
 import { ChevronRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@radix-ui/react-label";
+import emailjs from "@emailjs/browser";
 
 export default function Context() {
   const [step, setStep] = useState(1);
   const [submit, setSubmit] = useState(true);
+  const [btn, setBtn] = useState(true);
 
   const [formData, setFormData] = useState({
-    // name: "",
-    // email: "",
-    // phone: "",
-    // traject: "",
-    // problem: "",
-    // status: [],
+    address: "",
+    contactEmail: "",
+    contactName: "",
+    contactPhone: "",
+    contactPreference: "",
+    declarationIndependent: "",
+    declarationPrivacy: "",
+    houseType: "",
+    postalPlace: "",
+    problem: "",
+    status: "",
+    behoefte: "",
+    traject: "",
   });
 
-  const nextStep = () => setStep(step + 1);
+  useEffect(() => {
+    switch (step) {
+      case 1:
+        setBtn(!formData.traject);
+        break;
+
+      case 2:
+        setBtn(!formData.problem);
+        break;
+
+      case 3:
+        setBtn(!formData.status);
+        break;
+
+      case 4:
+        setBtn(!formData.behoefte);
+        break;
+
+      case 5:
+        setBtn(
+          !formData.address || !formData.postalPlace || !formData.houseType
+        );
+        break;
+
+      case 6:
+        setBtn(
+          !formData.contactName ||
+            !formData.contactPhone ||
+            !formData.contactEmail ||
+            !formData.contactPreference
+        );
+        break;
+
+      default:
+        setBtn(false);
+    }
+  }, [formData, step]);
+
+  const nextStep = () => setStep((prev) => prev + 1);
   const prevStep = () => setStep(step - 1);
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-
+    const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    // console.log(formData);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    alert("Form submitted!");
+    emailjs
+      .send(
+        // "YOUR_SERVICE_ID",
+        "service_lu9i3cb",
+        // "YOUR_TEMPLATE_ID",
+        "template_ambyxc9",
+        {
+          traject: formData.traject,
+          problem: formData.problem,
+          status: formData.status,
+          needs: formData.behoefte,
+          address: formData.address,
+          postalPlace: formData.postalPlace,
+          houseType: formData.houseType,
+          contactName: formData.contactName,
+          contactPhone: formData.contactPhone,
+          contactEmail: formData.contactEmail,
+          contactPreference: formData.contactPreference,
+        },
+        // "YOUR_PUBLIC_KEY"
+        "XkKPDhbLWKFUESDbS"
+      )
+      .then(
+        () => {
+          alert("Aanvraag succesvol verzonden!");
+        },
+        (error) => {
+          console.log(error);
+          alert("Er ging iets mis.");
+        }
+      );
     setSubmit(false);
     // traject@aardbeving-adviesbureau.nl
   };
@@ -102,6 +178,7 @@ export default function Context() {
                           name="traject"
                           value="IMG – Schade"
                           onChange={handleChange}
+                          checked={formData.traject === "IMG – Schade"}
                           className="custom-radio"
                         />
                         IMG – Schade
@@ -113,6 +190,7 @@ export default function Context() {
                           name="traject"
                           value="NCG – Versterking"
                           onChange={handleChange}
+                          checked={formData.traject === "NCG – Versterking"}
                           className="custom-radio"
                         />
                         NCG – Versterking
@@ -124,6 +202,7 @@ export default function Context() {
                           name="traject"
                           value="Duurzaam herstel"
                           onChange={handleChange}
+                          checked={formData.traject === "Duurzaam herstel"}
                           className="custom-radio"
                         />
                         Duurzaam herstel
@@ -159,63 +238,84 @@ export default function Context() {
                       3. Wat is al gebeurd?
                     </h3>
 
-                    <div className="flex flex-col text-xl gap-2.5">
-                      <Label className="flex gap-1 w-fit">
+                    <div className="flex flex-col text-xl gap-2.5 gap-y-5">
+                      <Label className="flex gap-1 w-fit leading-none">
                         <input
                           type="radio"
                           name="status"
                           value="Er is een opname of rapport opgest"
                           onChange={handleChange}
+                          checked={
+                            formData.status ===
+                            "Er is een opname of rapport opgest"
+                          }
                           className="custom-radio"
                         />
                         Er is een opname of rapport opgesteld
                       </Label>
-                      <Label className="flex gap-1 w-fit">
+                      <Label className="flex gap-1 w-fit leading-none">
                         <input
                           type="radio"
                           name="status"
                           value="Er is een besluit genomen"
                           onChange={handleChange}
+                          checked={
+                            formData.status === "Er is een besluit genomen"
+                          }
                           className="custom-radio"
                         />
                         Er is een besluit genomen
                       </Label>
-                      <Label className="flex gap-1 w-fit">
+                      <Label className="flex gap-1 w-fit leading-none">
                         <input
                           type="radio"
                           name="status"
                           value="Ik ben het niet eens met het besluit"
                           onChange={handleChange}
+                          checked={
+                            formData.status ===
+                            "Ik ben het niet eens met het besluit"
+                          }
                           className="custom-radio"
                         />
                         Ik ben het niet eens met het besluit
                       </Label>
-                      <Label className="flex gap-1 w-fit">
+                      <Label className="flex gap-1 w-fit leading-none">
                         <input
                           type="radio"
                           name="status"
                           value="Er loopt bezwaar of procedure"
                           onChange={handleChange}
+                          checked={
+                            formData.status === "Er loopt bezwaar of procedure"
+                          }
                           className="custom-radio"
                         />
                         Er loopt bezwaar of procedure
                       </Label>
-                      <Label className="flex gap-1 w-fit">
+                      <Label className="flex gap-1 w-fit leading-none">
                         <input
                           type="radio"
                           name="status"
                           value="Herstel is uitgevoerd maar problemen blijven"
                           onChange={handleChange}
+                          checked={
+                            formData.status ===
+                            "Herstel is uitgevoerd maar problemen blijven"
+                          }
                           className="custom-radio"
                         />
                         Herstel is uitgevoerd maar problemen blijven
                       </Label>
-                      <Label className="flex gap-1 w-fit">
+                      <Label className="flex gap-1 w-fit leading-none">
                         <input
                           type="radio"
                           name="status"
                           value="Nog geen formeel besluit"
                           onChange={handleChange}
+                          checked={
+                            formData.status === "Nog geen formeel besluit"
+                          }
                           className="custom-radio"
                         />
                         Nog geen formeel besluit
@@ -231,63 +331,87 @@ export default function Context() {
                       4. Waar heeft u behoefte aan?
                     </h3>
 
-                    <div className="flex flex-col text-xl gap-2.5">
-                      <Label className="flex gap-1 w-fit">
+                    <div className="flex flex-col text-xl gap-2.5 gap-y-5">
+                      <Label className="flex gap-1 w-fit leading-none">
                         <input
                           type="radio"
-                          name="status"
+                          name="behoefte"
                           value="Onafhankelijke technische beoordeling"
                           onChange={handleChange}
+                          checked={
+                            formData.behoefte ===
+                            "Onafhankelijke technische beoordeling"
+                          }
                           className="custom-radio"
                         />
                         Onafhankelijke technische beoordeling
                       </Label>
-                      <Label className="flex gap-1 w-fit">
+                      <Label className="flex gap-1 w-fit leading-none">
                         <input
                           type="radio"
-                          name="status"
+                          name="behoefte"
                           value="Second opinion op rapport of advies"
                           onChange={handleChange}
+                          checked={
+                            formData.behoefte ===
+                            "Second opinion op rapport of advies"
+                          }
                           className="custom-radio"
                         />
                         Second opinion op rapport of advies
                       </Label>
-                      <Label className="flex gap-1 w-fit">
+                      <Label className="flex gap-1 w-fit leading-none">
                         <input
                           type="radio"
-                          name="status"
+                          name="behoefte"
                           value=" Inzicht in samenhang van mijn dossier"
                           onChange={handleChange}
+                          checked={
+                            formData.behoefte ===
+                            " Inzicht in samenhang van mijn dossier"
+                          }
                           className="custom-radio"
                         />
                         Inzicht in samenhang van mijn dossier
                       </Label>
-                      <Label className="flex gap-1 w-fit">
+                      <Label className="flex gap-1 w-fit leading-none">
                         <input
                           type="radio"
-                          name="status"
+                          name="behoefte"
                           value="Technische onderbouwing richting instantie"
                           onChange={handleChange}
+                          checked={
+                            formData.behoefte ===
+                            "Technische onderbouwing richting instantie"
+                          }
                           className="custom-radio"
                         />
                         Technische onderbouwing richting instantie
                       </Label>
-                      <Label className="flex gap-1 w-fit">
+                      <Label className="flex gap-1 w-fit leading-none">
                         <input
                           type="radio"
-                          name="status"
+                          name="behoefte"
                           value=" Duiding van mijn mogelijkheden"
                           onChange={handleChange}
+                          checked={
+                            formData.behoefte ===
+                            " Duiding van mijn mogelijkheden"
+                          }
                           className="custom-radio"
                         />
                         Duiding van mijn mogelijkheden
                       </Label>
-                      <Label className="flex gap-1 w-fit">
+                      <Label className="flex gap-1 w-fit leading-none">
                         <input
                           type="radio"
-                          name="status"
+                          name="behoefte"
                           value=" Ik weet het nog niet precies"
                           onChange={handleChange}
+                          checked={
+                            formData.behoefte ===
+                            " Ik weet het nog niet precies"
+                          }
                           className="custom-radio"
                         />
                         Ik weet het nog niet precies
@@ -529,9 +653,14 @@ export default function Context() {
                   <button
                     type="button"
                     onClick={nextStep}
+                    disabled={btn}
                     className={`${
                       step === 7 && "hidden"
-                    } uppercase px-5 py-1.5 bg-[--background_box] rounded-full text-white`}
+                    } uppercase px-5 py-1.5 rounded-full text-white ${
+                      btn
+                        ? "bg-gray-400 cursor-not-allowed"
+                        : "bg-[--background_box]"
+                    }`}
                   >
                     Next
                   </button>

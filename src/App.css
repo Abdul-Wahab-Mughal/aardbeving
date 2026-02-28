@@ -34,7 +34,9 @@ main {
   -webkit-appearance: none;
   margin: auto;
   width: 14px;
+  min-width: 14px;
   height: 14px;
+  min-height: 14px;
   border: 2px solid #ccc;
   border-radius: 50%;
   background-color: #ffffff; /* white default */
