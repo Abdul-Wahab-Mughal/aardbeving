@@ -1,28 +1,38 @@
 import Bannar from "@/components/section/Bannar";
 import Points from "@/components/section/Points";
 import React from "react";
-import heroBg from "@/assets/logo.jpeg";
 import ServiceCards from "@/components/section/ServiceCards";
-import ContactForm from "@/components/section/ContactForm";
+import traject2 from "@/assets/traject2.png";
+import ncg1 from "@/assets/ncg1.png";
+import ncg2 from "@/assets/ncg2.png";
+import ncg3 from "@/assets/ncg3.png";
+import ncg4 from "@/assets/ncg4.png";
+import TitleBox from "@/components/ui/titleBox";
 
 const points = [
   {
     title: "Onzekerheid over veiligheid",
     description:
-      "Het kan frustrerend zijn wanneer een voorstel voor duurzaam of structureel herstel wordt afgewezen, terwijl u juist op zoek bent naar een oplossing voor de lange termijn. Dit roept vragen op over de motieven, criteria en onderbouwing van het besluit. Wij helpen om hier duidelijkheid in te krijgen.",
-    image: heroBg,
+      "Aardbevingen brengen begrijpelijke zorgen met zich mee over de veiligheid van uw woning of gebouw. Bewoners en eigenaren krijgen te maken met complexe informatie, verschillende beoordelingen en uiteenlopende adviezen. Dit kan leiden tot twijfel en stress over wat nu écht veilig is. Wij helpen om helderheid te scheppen en inzicht te geven in de daadwerkelijke risico’s.",
+    image: ncg1,
   },
   {
-    title: "Beoordeling blijft ‘binnen normen’",
+    title: "Opnames voelen te beperkt",
     description:
-      "Soms wordt geconcludeerd dat een woning formeel ‘binnen de normen’ valt, terwijl u zich er toch niet veilig of comfortabel in voelt. Dit spanningsveld tussen regelgeving en leefbaarheid kan verwarrend zijn. Wij kijken verder dan alleen de norm en betrekken uw praktische woonsituatie.",
-    image: heroBg,
+      "Technische opnames van gebouwen worden soms ervaren als oppervlakkig of onvoldoende toegespitst op de specifieke situatie. Hierdoor kan het gevoel ontstaan dat belangrijke details over het hoofd worden gezien. Wij kijken verder dan de standaardcriteria en betrekken uw persoonlijke omstandigheden en ervaringen bij de beoordeling.",
+    image: ncg2,
   },
   {
-    title: "Woning functioneert niet goed of blijft kwetsbaar",
+    title: "Lange doorlooptijd of steeds wijzigende inzichten",
     description:
-      "Ook na herstel of versterking kan een woning nog gebreken vertonen of kwetsbaar aanvoelen. Dat kan zorgen geven over comfort, veiligheid en toekomstwaarde. Wij analyseren waar de kwetsbaarheden zitten en wat nodig is om uw woning robuuster te maken",
-    image: heroBg,
+      "Besluitvorming rond aardbevingsschade en versterking kan lang duren en in de tussentijd kunnen inzichten veranderen. Dit zorgt voor onzekerheid en frustratie bij betrokkenen. Wij begeleiden u door dit proces, houden overzicht en helpen u omgaan met nieuwe informatie en veranderende kaders.",
+    image: ncg3,
+  },
+  {
+    title: "Ingrijpende keuzes zoals sloop/nieuwbouw",
+    description:
+      "Soms staan eigenaren voor moeilijke beslissingen, zoals sloop en nieuwbouw of ingrijpende versterking. Dit heeft niet alleen technische, maar ook emotionele en financiële gevolgen. Wij ondersteunen u bij het afwegen van opties, zodat u weloverwogen keuzes kunt maken die aansluiten bij uw situatie en toekomstplannen.",
+    image: ncg4,
   },
 ];
 
@@ -52,13 +62,13 @@ const services = [
 export default function NCGTraject() {
   return (
     <main className="bg-white">
-      <Bannar title="NCG-traject (Versterking)" />
+      <Bannar title="NCG-traject (Versterking)" image={traject2} />
       <Points
         points={points}
         title="Zijn de volgende punten herkenbaar voor u?"
       />
       <ServiceCards services={services} />
-      <ContactForm showTraject />
+      <TitleBox title="Kosten onafhankelijke ondersteuning" />
     </main>
   );
 }

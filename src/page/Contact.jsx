@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import herobg from "../assets/hero-bg.jpg";
+import bannar from "@/assets/contact.png";
 import { ChevronRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -123,7 +123,7 @@ export default function Context() {
     <main>
       <section className="h-screen w-full p-5 bg-[--background_box]">
         <div className="relative w-full h-full rounded-2xl overflow-hidden">
-          <img src={herobg} alt="" className="w-full h-full object-cover" />
+          <img src={bannar} alt="" className="w-full h-full object-cover" />
           <div className=" absolute inset-0 h-full w-full bg-black/25"></div>
           <div className=" absolute m-2.5 left-0 md:left-10 top-0 md:top-20 max-w-xl w-full">
             <div className=" p-5 md:p-10 bg-white text-black rounded-xl md:rounded space-y-5 w-full">
@@ -687,8 +687,10 @@ export default function Context() {
           ) : (
             <div className="text-sm text-gray-600 leading-relaxed pt-4 border-t text-center">
               {/* Closing Text */}
-              <p>Na ontvangst beoordelen wij uw aanvraag inhoudelijk.</p>
-              <p className="mt-2">
+              <p className="font-bold text-xl">
+                Na ontvangst beoordelen wij uw aanvraag inhoudelijk.
+              </p>
+              <p className="mt-2 text-xl">
                 Indien uw situatie binnen onze expertise valt, nemen wij contact
                 met u op voor een eerste gesprek.
               </p>

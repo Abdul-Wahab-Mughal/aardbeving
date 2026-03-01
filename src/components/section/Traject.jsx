@@ -1,6 +1,9 @@
 import React from "react";
 import TitleBox from "../ui/titleBox";
-import heroBg from "@/assets/hero-bg.jpg";
+import traject1 from "@/assets/traject1.png";
+import traject2 from "@/assets/traject2.png";
+import traject3 from "@/assets/traject3.png";
+import traject4 from "@/assets/traject4.png";
 
 const traject = [
   {
@@ -8,7 +11,7 @@ const traject = [
     question: "Twijfel over schadeafhandeling of beslissingen van het IMG?",
     description:
       "Wij bieden onafhankelijke technische ondersteuning bij schade, second opinions en onderbouwing voor bezwaar of vervolgstappen.",
-    image: heroBg,
+    image: traject1,
     path: "/img-traject",
     bg: "bg-red-300/25",
   },
@@ -18,7 +21,7 @@ const traject = [
       "Twijfel over uw versterkingstraject of veiligheid van uw woning?",
     description:
       "Wij geven onafhankelijk, woningbreed advies en helpen u begrijpelijke keuzes te maken in het NCG-traject.",
-    image: heroBg,
+    image: traject2,
     path: "/ncg-traject",
     bg: "bg-orange-300/25",
   },
@@ -27,7 +30,7 @@ const traject = [
     question: "Komt duurzaam herstel voor uw woning niet van de grond?",
     description:
       "Wij bieden een onafhankelijk technisch perspectief en helpen u richting toekomstbestendige oplossingen.",
-    image: heroBg,
+    image: traject3,
     path: "/duurzaam-herstel",
     bg: "bg-green-300/25",
   },
@@ -36,7 +39,7 @@ const traject = [
     question: "Is uw aardbevingsdossier vastgelopen?",
     description:
       "Wij brengen overzicht, samenhang en richting in complexe trajecten, zodat u weer verder kunt.",
-    image: heroBg,
+    image: traject4,
     path: "/vastgelopen-trajecten",
     bg: "bg-gray-300/25",
   },

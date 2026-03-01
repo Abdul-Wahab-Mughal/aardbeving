@@ -1,34 +1,38 @@
 import Bannar from "@/components/section/Bannar";
 import Points from "@/components/section/Points";
 import React from "react";
-import heroBg from "@/assets/logo.jpeg";
 import ServiceCards from "@/components/section/ServiceCards";
-import ContactForm from "@/components/section/ContactForm";
+import traject4 from "@/assets/traject4.png";
+import vt1 from "@/assets/vt1.png";
+import vt2 from "@/assets/vt2.png";
+import vt3 from "@/assets/vt3.png";
+import vt4 from "@/assets/vt4.png";
+import TitleBox from "@/components/ui/titleBox";
 
 const points = [
   {
     title: "Meerdere trajecten tegelijk",
     description:
       "U kunt te maken hebben met verschillende lopende procedures rondom schade, herstel en versterking. Dat maakt het lastig om overzicht te houden en te weten waar u aan toe bent.",
-    image: heroBg,
+    image: vt1,
   },
   {
     title: "Tegenstrijdige besluiten",
     description:
       "Besluiten van verschillende partijen spreken elkaar soms tegen, waardoor u met verwarrende of onwerkbare uitkomsten blijft zitten. Dit kan leiden tot onzekerheid en vertraging",
-    image: heroBg,
+    image: vt2,
   },
   {
     title: "Niemand bewaakt het gehee",
     description:
       "Elk traject heeft zijn eigen regels en beoordelaars, maar een integrale blik op uw woning ontbreekt vaak. Hierdoor raken belangrijke samenhangen onderbelicht.",
-    image: heroBg,
+    image: vt3,
   },
   {
     title: "Mentale en financiële uitputting",
     description:
       "Langdurige procedures, onzekerheid en steeds terugkerende problemen kunnen zwaar wegen, zowel emotioneel als financieel.",
-    image: heroBg,
+    image: vt4,
   },
 ];
 
@@ -58,13 +62,13 @@ const services = [
 export default function VastlopendeTrajecten() {
   return (
     <main className="bg-white">
-      <Bannar title="Vastlopende trajecten" />
+      <Bannar title="Vastlopende trajecten" image={traject4} />
       <Points
         points={points}
         title="Zijn de volgende punten herkenbaar voor u?"
       />
       <ServiceCards services={services} />
-      <ContactForm showTraject />
+      <TitleBox title="Kosten onafhankelijke ondersteuning" />
     </main>
   );
 }

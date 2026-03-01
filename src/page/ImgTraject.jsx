@@ -1,34 +1,38 @@
 import Bannar from "@/components/section/Bannar";
 import Points from "@/components/section/Points";
 import React from "react";
-import heroBg from "@/assets/logo.jpeg";
 import ServiceCards from "@/components/section/ServiceCards";
-import ContactForm from "@/components/section/ContactForm";
+import banner from "@/assets/traject1.png"
+import img1 from "@/assets/img1.png";
+import img2 from "@/assets/img2.png";
+import img3 from "@/assets/img3.png";
+import img4 from "@/assets/img4.png";
+import TitleBox from "@/components/ui/titleBox";
 
 const points = [
   {
     title: "Schade keert terug na herstel",
     description:
       "Het kan ontmoedigend zijn als herstelde schade opnieuw zichtbaar wordt. Dit roept vragen op over de kwaliteit van het herstel en de onderliggende oorzaak. Wij helpen u begrijpen waarom schade terugkomt en wat er nodig is om dit structureel aan te pakken.",
-    image: heroBg,
+    image: img1,
   },
   {
     title: "Nieuwe schade wordt niet erkend",
     description:
       "Wanneer nieuwe scheuren of gebreken niet als aardbevingsschade worden gezien, kan dat voelen alsof uw zorgen niet serieus worden genomen. Wij kijken onafhankelijk naar uw situatie en helpen u om uw verhaal technisch goed onderbouwd te krijgen.",
-    image: heroBg,
+    image: img2,
   },
   {
     title: "Rapporten zijn onduidelijk of voelen onvolledig",
     description:
       "Technische rapportages zijn vaak lastig te doorgronden en laten soms vragen onbeantwoord. Wij maken inzichtelijk wat er precies is onderzocht, wat ontbreekt en wat dit betekent voor uw woning.",
-    image: heroBg,
+    image: img3,
   },
   {
     title: "U twijfelt aan de conclusies of het besluit",
     description:
       "Als conclusies niet aansluiten bij uw ervaring of gevoel, kan dat onzekerheid en wantrouwen veroorzaken. Wij nemen uw twijfel serieus en toetsen besluiten kritisch op inhoud en zorgvuldigheid.",
-    image: heroBg,
+    image: img4,
   },
 ];
 
@@ -58,13 +62,13 @@ const services = [
 export default function ImgTraject() {
   return (
     <main className="bg-white">
-      <Bannar title="IMG-traject (schade)" />
+      <Bannar title="IMG-traject (schade)"  image={banner}/>
       <Points
         points={points}
         title="Zijn de volgende punten herkenbaar voor u?"
       />
       <ServiceCards services={services} />
-      <ContactForm showTraject />
+      <TitleBox title="Kosten onafhankelijke ondersteuning"/>
     </main>
   );
 }

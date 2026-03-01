@@ -1,12 +1,12 @@
 import Bannar from "@/components/section/Bannar";
-import ContactForm from "@/components/section/ContactForm";
 import TitleBox from "@/components/ui/titleBox";
 import React from "react";
+import aab from "@/assets/aab.png";
 
 export default function OverAAB() {
   return (
     <main className="bg-white">
-      <Bannar title="Over AAB" />
+      <Bannar title="Over AAB" image={aab} />
       <section>
         <TitleBox title="Algemeen" />
         <div className=" container m-auto py-10 px-5 lg:px-20 text-black flex flex-col gap-6">
@@ -54,7 +54,7 @@ export default function OverAAB() {
           </p>
         </div>
       </section>
-      <ContactForm showTraject />
+      <TitleBox title="Kosten onafhankelijke ondersteuning" />
     </main>
   );
 }

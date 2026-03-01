@@ -1,34 +1,31 @@
 import Bannar from "@/components/section/Bannar";
 import Points from "@/components/section/Points";
 import React from "react";
-import heroBg from "@/assets/logo.jpeg";
 import ServiceCards from "@/components/section/ServiceCards";
-import ContactForm from "@/components/section/ContactForm";
+import traject3 from "@/assets/traject3_Ban.png";
+import dh1 from "@/assets/dh1.png";
+import dh2 from "@/assets/dh2.png";
+import dh3 from "@/assets/dh3.png";
+import TitleBox from "@/components/ui/titleBox";
 
 const points = [
   {
     title: "Duurzaam herstel is afgewezen",
     description:
-      "Aardbevingen brengen begrijpelijke zorgen met zich mee over de veiligheid van uw woning of gebouw. Bewoners en eigenaren krijgen te maken met complexe informatie, verschillende beoordelingen en uiteenlopende adviezen. Wij helpen om helderheid te scheppen en inzicht te geven in de daadwerkelijke risico's.",
-    image: heroBg,
+      "Het kan frustrerend zijn wanneer een voorstel voor duurzaam of structureel herstel wordt afgewezen, terwijl u juist op zoek bent naar een oplossing voor de lange termijn. Dit roept vragen op over de motieven, criteria en onderbouwing van het besluit. Wij helpen om hier duidelijkheid in te krijgen.",
+    image: dh1,
   },
   {
-    title: "Opnames voelen te beperkt",
+    title: "Beoordeling blijft ‘binnen normen’",
     description:
-      "Technische opnames van gebouwen worden soms ervaren als oppervlakkig of onvoldoende toegespitst op de specifieke situatie. Hierdoor kan het gevoel ontstaan dat belangrijke details over het hoofd worden gezien. Wij kijken verder dan de standaardcriteria.",
-    image: heroBg,
+      "Soms wordt geconcludeerd dat een woning formeel ‘binnen de normen’ valt, terwijl u zich er toch niet veilig of comfortabel in voelt. Dit spanningsveld tussen regelgeving en leefbaarheid kan verwarrend zijn. Wij kijken verder dan alleen de norm en betrekken uw praktische woonsituatie",
+    image: dh2,
   },
   {
-    title: "Lange doorlooptijd of steeds wijzigende inzichten",
+    title: "Woning functioneert niet goed of blijft kwetsbaar",
     description:
-      "Besluitvorming rond aardbevingsschade en versterking kan lang duren en in de tussentijd kunnen inzichten veranderen. Dit zorgt voor onzekerheid en frustratie. Wij begeleiden u door dit proces en helpen u omgaan met nieuwe informatie.",
-    image: heroBg,
-  },
-  {
-    title: "Ingrijpende keuzes zoals sloop/nieuwbouw",
-    description:
-      "Soms staan eigenaren voor moeilijke beslissingen, zoals sloop en nieuwbouw of ingrijpende versterking. Dit heeft niet alleen technische, maar ook emotionele en financiële gevolgen. Wij ondersteunen u bij het afwegen van opties.",
-    image: heroBg,
+      "Ook na herstel of versterking kan een woning nog gebreken vertonen of kwetsbaar aanvoelen. Dat kan zorgen geven over comfort, veiligheid en toekomstwaarde. Wij analyseren waar de kwetsbaarheden zitten en wat nodig is om uw woning robuuster te maken. ",
+    image: dh3,
   },
 ];
 
@@ -58,13 +55,13 @@ const services = [
 export default function DuurzaamHerstel() {
   return (
     <main className="bg-white">
-      <Bannar title="Duurzaam Herstel" />
+      <Bannar title="Duurzaam Herstel" image={traject3} />
       <Points
         points={points}
         title="Zijn de volgende punten herkenbaar voor u?"
       />
       <ServiceCards services={services} />
-      <ContactForm showTraject />
+      <TitleBox title="Kosten onafhankelijke ondersteuning" />
     </main>
   );
 }

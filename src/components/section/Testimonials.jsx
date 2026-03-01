@@ -1,23 +1,25 @@
 import React from "react";
 import TitleBox from "../ui/titleBox";
-import heroBg from "@/assets/hero-bg.jpg";
 import { Link } from "react-router-dom";
+import testimonial1 from "@/assets/testimonial1.png";
+import testimonial2 from "@/assets/testimonial2.png";
+import testimonial3 from "@/assets/testimonial3.png";
 
 const testimonials = [
   {
     name: "Woningstichting Noord",
     text: "Heldere communicatie en strak begeleid vanaf het eerste gesprek.",
-    image: heroBg,
+    image: testimonial1,
   },
   {
     name: "van Dijk Bouw BV",
     text: "Dankzij het duidelijke advies wisten we precies waar we aan toe waren.",
-    image: heroBg,
+    image: testimonial2,
   },
   {
     name: "Familie de Vries",
     text: "Snelle schakeling met gemeente en partners, waardoor het traject soepel liep.",
-    image: heroBg,
+    image: testimonial3,
   },
 ];
 
@@ -44,7 +46,10 @@ export default function Testimonials() {
                 <p className=" text-sm text-muted-foreground italic mb-3">
                   {t.text}
                 </p>
-                <Link to="#" className=" text-red-300 text-sm font-medium text-link-accent group flex w-fit">
+                <Link
+                  to="#"
+                  className=" text-red-300 text-sm font-medium text-link-accent group flex w-fit"
+                >
                   Lees meer
                   <div className=" group-hover:translate-x-2.5 duration-500">
                     →
