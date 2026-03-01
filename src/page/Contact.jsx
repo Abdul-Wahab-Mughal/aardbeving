@@ -648,7 +648,7 @@ export default function Context() {
                       step === 1 && " opacity-0 pointer-events-none"
                     } uppercase px-5 py-1.5 bg-[--background_box] rounded-full text-white`}
                   >
-                    rug
+                    Terug
                   </button>
                   <button
                     type="button"
