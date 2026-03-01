@@ -648,7 +648,7 @@ export default function Context() {
                       step === 1 && " opacity-0 pointer-events-none"
                     } uppercase px-5 py-1.5 bg-[--background_box] rounded-full text-white`}
                   >
-                    Back
+                    rug
                   </button>
                   <button
                     type="button"
@@ -662,7 +662,7 @@ export default function Context() {
                         : "bg-[--background_box]"
                     }`}
                   >
-                    Next
+                    volgende
                   </button>
                   <button
                     type="submit"
