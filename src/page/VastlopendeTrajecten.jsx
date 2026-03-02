@@ -23,7 +23,7 @@ const points = [
     image: vt2,
   },
   {
-    title: "Niemand bewaakt het gehee",
+    title: "Niemand bewaakt het geheel",
     description:
       "Elk traject heeft zijn eigen regels en beoordelaars, maar een integrale blik op uw woning ontbreekt vaak. Hierdoor raken belangrijke samenhangen onderbelicht.",
     image: vt3,
