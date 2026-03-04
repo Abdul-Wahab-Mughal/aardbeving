@@ -14,7 +14,7 @@ export default function Index() {
       />
       <Intro />
       <Traject />
-      <Testimonials />
+      <Testimonials title="Hoe wij het aanpakken"/>
     </main>
   );
 }

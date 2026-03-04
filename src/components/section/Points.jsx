@@ -1,7 +1,7 @@
 import React from "react";
 import TitleBox from "../ui/titleBox";
 
-export default function Points({ points, title }) {
+export default function Points({ points, title, color }) {
   return (
     <section>
       <TitleBox title={title} />
@@ -9,9 +9,9 @@ export default function Points({ points, title }) {
         {points.map((point, i) => (
           <div
             key={i}
-            className={`flex flex-col items-center gap-8 ${
+            className={`flex flex-col  gap-5 ${
               i % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"
-            }`}
+            } ${color}`}
           >
             <div className="w-full md:w-2/6">
               <img
@@ -20,26 +20,19 @@ export default function Points({ points, title }) {
                 className="w-full h-56 object-cover rounded-sm"
               />
             </div>
-            <div className="w-full md:w-4/6">
-              <div className="w-full space-y-2 text-black border-2 border-[--border] group bg-[--background_box]">
-                <div className="border-2 border-[--border] p-2.5 translate-x-2.5 -translate-y-2.5 bg-white group-hover:bg-[--background_box] duration-500">
-                  <h3 className=" text-xl font-bold group-hover:text-white duration-500">
-                    {point.title}
-                  </h3>
-                  <p className=" leading-normal group-hover:text-white duration-500">
-                    {point.description}
-                  </p>
-                </div>
+            <div className="w-full md:w-4/6 flex flex-col p-5">
+              <div className="w-full space-y-2 text-black">
+                <h3 className=" text-3xl font-bold">{point.title}</h3>
+                <p className=" leading-normal">{point.description}</p>
               </div>
-              <a
-                href="/contact"
-                className="flex group text-black mx-auto w-fit mt-2.5 gap-2.5 border-2 border-[--border] py-1 p-5 rounded"
-              >
-                contact
-                <div className=" group-hover:translate-x-2.5 duration-500">
-                  →
-                </div>
-              </a>
+              <div className="flex flex-col h-full">
+                <a
+                  href="/contact"
+                  className=" text-black w-fit border-2 border-[--border] py-1 p-5 rounded mt-auto"
+                >
+                  contact
+                </a>
+              </div>
             </div>
           </div>
         ))}

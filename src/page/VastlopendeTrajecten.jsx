@@ -66,6 +66,7 @@ export default function VastlopendeTrajecten() {
       <Points
         points={points}
         title="Zijn de volgende punten herkenbaar voor u?"
+        color="bg-[rgb(200,211,215)]"
       />
       <ServiceCards services={services} />
       <TitleBox title="Kosten onafhankelijke ondersteuning" />

@@ -2,12 +2,12 @@ import Bannar from "@/components/section/Bannar";
 import Points from "@/components/section/Points";
 import React from "react";
 import ServiceCards from "@/components/section/ServiceCards";
-import banner from "@/assets/traject1.png"
+import banner from "@/assets/traject1.png";
 import img1 from "@/assets/img1.png";
 import img2 from "@/assets/img2.png";
 import img3 from "@/assets/img3.png";
 import img4 from "@/assets/img4.png";
-import TitleBox from "@/components/ui/titleBox";
+import Testimonials from "@/components/section/Testimonials";
 
 const points = [
   {
@@ -62,13 +62,14 @@ const services = [
 export default function ImgTraject() {
   return (
     <main className="bg-white">
-      <Bannar title="IMG-traject (schade)"  image={banner}/>
+      <Bannar title="IMG-traject (schade)" image={banner} />
       <Points
         points={points}
         title="Zijn de volgende punten herkenbaar voor u?"
+        color="bg-[rgb(251,242,243)]"
       />
       <ServiceCards services={services} />
-      <TitleBox title="Kosten onafhankelijke ondersteuning"/>
+      <Testimonials title="Kosten onafhankelijke ondersteuning"/>
     </main>
   );
 }

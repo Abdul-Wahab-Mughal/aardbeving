@@ -13,7 +13,7 @@ const traject = [
       "Wij bieden onafhankelijke technische ondersteuning bij schade, second opinions en onderbouwing voor bezwaar of vervolgstappen.",
     image: traject1,
     path: "/img-traject",
-    bg: "bg-red-300/25",
+    bg: "bg-[rgb(251,242,243)]",
   },
   {
     title: "NCG-traject (versterking)",
@@ -23,7 +23,7 @@ const traject = [
       "Wij geven onafhankelijk, woningbreed advies en helpen u begrijpelijke keuzes te maken in het NCG-traject.",
     image: traject2,
     path: "/ncg-traject",
-    bg: "bg-orange-300/25",
+    bg: "bg-[rgb(241,239,227)]",
   },
   {
     title: "Duurzaam herstel",
@@ -32,7 +32,7 @@ const traject = [
       "Wij bieden een onafhankelijk technisch perspectief en helpen u richting toekomstbestendige oplossingen.",
     image: traject3,
     path: "/duurzaam-herstel",
-    bg: "bg-green-300/25",
+    bg: "bg-[rgb(224,225,217)]",
   },
   {
     title: "Vastgelopen trajecten",
@@ -41,7 +41,7 @@ const traject = [
       "Wij brengen overzicht, samenhang en richting in complexe trajecten, zodat u weer verder kunt.",
     image: traject4,
     path: "/vastgelopen-trajecten",
-    bg: "bg-gray-300/25",
+    bg: "bg-[rgb(200,211,215)]",
   },
 ];
 
@@ -61,11 +61,11 @@ export default function Traject() {
               className="w-full h-48 object-cover"
             />
             <div className="p-5 flex-1 flex flex-col">
-              <h3 className="font-display font-semibold text-black mb-2">
+              <h3 className="font-display font-semibold text-black mb-2 text-lg">
                 {t.title}
               </h3>
-              <p className="text-sm text-black mb-5">{t.question}</p>
-              <p className="text-sm text-black flex-1 mb-5">{t.description}</p>
+              <p className="text text-black mb-5">{t.question}</p>
+              <p className="text text-black flex-1 mb-5">{t.description}</p>
               <div
                 className="text-sm font-medium text-red-300 hover:opacity-80 transition-opacity flex"
               >

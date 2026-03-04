@@ -66,6 +66,7 @@ export default function NCGTraject() {
       <Points
         points={points}
         title="Zijn de volgende punten herkenbaar voor u?"
+        color="bg-[rgb(241,239,227)]"
       />
       <ServiceCards services={services} />
       <TitleBox title="Kosten onafhankelijke ondersteuning" />
