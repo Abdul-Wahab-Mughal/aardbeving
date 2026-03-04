@@ -12,8 +12,8 @@ export default function Footer({ navItems }) {
   }
   return (
     <footer>
-      <div className=" bg-gray-200 py-12 px-5 lg:px-20 relative">
-        <div className=" grid grid-cols-1 md:grid-cols-3 gap-8 container m-auto max-md:text-center">
+      <div className=" bg-gray-200 relative">
+        <div className=" grid grid-cols-1 md:grid-cols-3 gap-8 container m-auto max-md:text-center py-12 px-5 lg:px-20">
           <div>
             <img
               src={logo}
@@ -23,7 +23,7 @@ export default function Footer({ navItems }) {
           </div>
           <div>
             <h4 className=" text-lg font-semibold mb-4 text-black">Algemeen</h4>
-            <ul className="space-y-1.5 text-sm text-[--muted-foreground] ">
+            <ul className="space-y-1.5 text-sm text-[--background_box] ">
               {navItems.map((item) => (
                 <li key={item.path}>
                   <Link
@@ -40,7 +40,7 @@ export default function Footer({ navItems }) {
             <h4 className=" text-lg font-semibold mb-4 text-black">
               <a href="/contact">Contact</a>
             </h4>
-            <div className=" text-sm text-[--muted-foreground] space-y-1.5">
+            <div className=" text-sm text-[--background_box] space-y-1.5">
               <p className="md:max-w-32">Ulgersmaweg 47-A 9731BK Groningen</p>
               <p className="pt-2">
                 <a
@@ -52,10 +52,10 @@ export default function Footer({ navItems }) {
               </p>
               <p>
                 <a
-                  href="tel:050"
+                  href="tel:0505777566"
                   className="hover:text-black transition-colors underline"
                 >
-                  050 – …..
+                  050 - 5777566
                 </a>
               </p>
             </div>

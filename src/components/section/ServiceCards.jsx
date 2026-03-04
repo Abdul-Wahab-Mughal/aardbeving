@@ -5,8 +5,8 @@ export default function ServiceCards({ services }) {
   return (
     <section>
       <TitleBox title="Wat kan AAB voor u betekenen?" />
-      <div className="py-10 px-5 lg:px-20 bg-gray-200">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 container m-auto">
+      <div className=" bg-gray-200">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 container m-auto py-10 px-5 lg:px-20">
           {services.map((item, i) => (
             <div
               key={i}

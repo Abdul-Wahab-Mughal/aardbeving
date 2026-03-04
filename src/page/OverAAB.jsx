@@ -7,54 +7,83 @@ export default function OverAAB() {
   return (
     <main className="bg-white">
       <Bannar title="Over AAB" image={aab} />
-      <section>
-        <TitleBox title="Algemeen" />
-        <div className=" container m-auto py-10 px-5 lg:px-20 text-black flex flex-col gap-6">
-          <p>
-            Aardbevingsschade en versterkingstrajecten in Groningen kunnen
-            langdurig en complex zijn. Bewoners krijgen te maken met
-            verschillende regelingen, rapporten en besluiten, die niet altijd
-            goed op elkaar aansluiten.
-          </p>
-          <p>
-            Aardbeving Adviesbureau (AAB) biedt onafhankelijke technische
-            ondersteuning aan bewoners die behoefte hebben aan duidelijkheid en
-            inhoudelijke onderbouwing
-          </p>
-          <div>
-            <p className="font-bold">Wij helpen wanneer u:</p>
-            <ul className=" list-disc pl-5">
-              <li>twijfelt aan een schade- of versterkingsrapport</li>
-              <li>het overzicht mist in meerdere trajecten</li>
-              <li>terugkerende schade ervaart</li>
-              <li>wilt weten wat technisch klopt en wat niet</li>
-            </ul>
-          </div>
-          <p>
-            Wij analyseren bouwkundige en constructieve vraagstukken, beoordelen
-            rapportages en brengen samenhang aan in uw dossier. Onze rol is
-            technisch en inhoudelijk, u houdt zelf de regie.
-          </p>
-        </div>
-      </section>
       <section className="bg-gray-200">
         <TitleBox title="Onze visie" />
-        <div className=" container m-auto py-10 px-5 lg:px-20 text-black flex flex-col gap-6 ">
+        <div className=" container m-auto py-10 px-5 lg:px-20 text-black flex flex-col">
           <p>
-            Wij vinden dat bewoners het beste geholpen worden wanneer er niet
-            alleen naar losse onderdelen wordt gekeken, maar naar de woning als
-            geheel. Schade, versterking en duurzaam herstel hangen vaak samen.
-            Duidelijkheid ontstaat wanneer technische vragen zorgvuldig worden
-            onderzocht en helder worden uitgelegd.
+            Wij vinden dat bewoners het beste geholpen worden wanneer niet
+            alleen naar losse onderdelen wordt gekeken, maar naar de woning en
+            het dossier als geheel. Schade, versterking en duurzaam herstel
+            hangen vaak met elkaar samen. Wanneer deze onderdelen afzonderlijk
+            worden beoordeeld, kan belangrijke samenhang verloren gaan
           </p>
+          <br />
+          <p>
+            AAB kijkt daarom integraal naar de technische situatie van een
+            woning. Door rapportages, constructieve gegevens en eerdere
+            beoordelingen in samenhang te analyseren, ontstaat een duidelijker
+            beeld van wat er technisch speelt.
+          </p>
+          <br />
           <p>
             AAB voert geen herstel- of bouwwerkzaamheden uit en heeft geen
             commercieel belang bij de uitkomst van besluiten. Onze adviezen zijn
-            gebaseerd op onafhankelijke technische beoordeling.
+            gebaseerd op een onafhankelijke technische beoordeling
           </p>
         </div>
       </section>
-      <TitleBox title="Kosten onafhankelijke ondersteuning" />
+      <section>
+        <TitleBox title="Onze werkwijze" />
+        <div className=" container m-auto py-10 px-5 lg:px-20 text-black flex flex-col">
+          <p>
+            Een traject begint meestal met een eerste verkenning van uw dossier.
+            We bekijken welke rapporten en informatie beschikbaar zijn en waar
+            mogelijke vragen of onduidelijkheden zitten.
+          </p>
+          <br />
+          <p>
+            Vervolgens analyseren wij de technische inhoud van het dossier.
+            Daarbij kijken wij onder meer naar bouwkundige en constructieve
+            aspecten, eerdere opnames en de samenhang tussen schade, versterking
+            en herstel.
+          </p>
+          <br />
+          <p>
+            Onze bevindingen leggen wij vast in een duidelijke technische
+            analyse. Deze kan u helpen om beter te begrijpen wat er technisch
+            speelt en vormt een inhoudelijke basis voor gesprekken met betrokken
+            partijen.
+          </p>
+        </div>
+      </section>
+      <section>
+        <TitleBox title="Onze rol in uw traject" />
+        <div className=" container m-auto py-10 px-5 lg:px-20 text-black flex flex-col">
+          <h4 className="text-2xl font-bold">
+            AAB is een onafhankelijke technisch adviseur voor bewoners.
+          </h4>
+          <br/>
+          <p>
+            Wij zijn geen onderdeel van het IMG of de NCG en nemen geen
+            besluiten over schade, versterking of regelingen. Die
+            verantwoordelijkheid blijft bij de betreffende instanties
+          </p>
+          <br />
+          <p>
+            Onze rol is om bewoners technisch en inhoudelijk te ondersteunen bij
+            het begrijpen van rapportages, het beoordelen van besluiten en het
+            verkrijgen van duidelijkheid in complexe dossiers.
+          </p>
+          <br />
+          <p>De bewoner blijft altijd zelf regiehouder van het traject.</p>
+          <br />
+          <br />
+          <h5 className="text-xl font-bold">
+            Twijfelt u over uw dossier of wilt u weten wat technisch klopt? Neem
+            gerust contact met ons op voor een eerste verkenning
+          </h5>
+        </div>
+      </section>
     </main>
   );
 }

@@ -8,31 +8,36 @@ import vt2 from "@/assets/vt2.png";
 import vt3 from "@/assets/vt3.png";
 import vt4 from "@/assets/vt4.png";
 import TitleBox from "@/components/ui/titleBox";
+import Intro from "@/components/section/Intro";
 
 const points = [
   {
     title: "Meerdere trajecten tegelijk",
     description:
-      "U kunt te maken hebben met verschillende lopende procedures rondom schade, herstel en versterking. Dat maakt het lastig om overzicht te houden en te weten waar u aan toe bent.",
+      "U kunt te maken hebben met verschillende lopende procedures rondom schade, herstel en versterking. Dat maakt het lastig om overzicht te houden en te weten waar u aan toe bent. AAB analyseert uw dossier en brengt de samenhang en mogelijke vervolgstappen in beeld. Zo ontstaat weer overzicht.",
     image: vt1,
+    btn: "Laat uw dossier beoordelen",
   },
   {
     title: "Tegenstrijdige besluiten",
     description:
-      "Besluiten van verschillende partijen spreken elkaar soms tegen, waardoor u met verwarrende of onwerkbare uitkomsten blijft zitten. Dit kan leiden tot onzekerheid en vertraging",
+      "Besluiten van verschillende partijen kunnen elkaar tegenspreken. Dat kan leiden tot verwarring, onzekerheid en vertraging in uw traject. AAB helpt om deze besluiten technisch te duiden en de samenhang in uw dossier weer inzichtelijk te maken.",
     image: vt2,
+    btn: "Laat uw dossier beoordelen",
   },
   {
     title: "Niemand bewaakt het geheel",
     description:
-      "Elk traject heeft zijn eigen regels en beoordelaars, maar een integrale blik op uw woning ontbreekt vaak. Hierdoor raken belangrijke samenhangen onderbelicht.",
+      "Elk traject heeft zijn eigen regels en beoordelaars, waardoor een integrale blik op uw woning vaak ontbreekt. Belangrijke samenhangen blijven daardoor onderbelicht. AAB bekijkt uw woning en dossier als geheel en maakt deze samenhang inzichtelijk",
     image: vt3,
+    btn: "Laat uw dossier beoordelen",
   },
   {
     title: "Mentale en financiële uitputting",
     description:
-      "Langdurige procedures, onzekerheid en steeds terugkerende problemen kunnen zwaar wegen, zowel emotioneel als financieel.",
+      "Langdurige procedures, onzekerheid en steeds terugkerende problemen kunnen zwaar wegen, zowel emotioneel als financieel. AAB helpt om uw dossier helder te analyseren en weer richting te geven aan het traject",
     image: vt4,
+    btn: "Laat uw dossier beoordelen",
   },
 ];
 
@@ -59,6 +64,50 @@ const services = [
   },
 ];
 
+const message = (
+  <>
+    <p>Vergoeding voor onafhankelijk advies</p>
+    <p>
+      In sommige situaties kunnen bewoners de kosten voor een onafhankelijke
+      deskundige vergoed krijgen. Welke regeling van toepassing is, hangt af van
+      het traject waarin uw woning zit.
+    </p>
+    <br />
+    <p>Schade – IMG</p>
+    <p>
+      Heeft u een schadeprocedure bij het Instituut Mijnbouwschade Groningen
+      (IMG)? Dan kunt u mogelijk gebruikmaken van de regeling
+      Deskundigenbijstand. Hiermee kunt u een eigen onafhankelijke deskundige
+      inschakelen om een schadebeoordeling of besluit te laten toetsen.
+      Aanvragen verloopt via het IMG en moet meestal vooraf worden goedgekeurd.
+    </p>
+    <br />
+    <p>Versterking – NCG</p>
+    <p>
+      Valt uw woning onder de versterkingsopgave van de Nationaal Coördinator
+      Groningen (NCG)? Dan kunt u gebruikmaken van de regeling Onafhankelijk
+      Advies. Hiermee kunt u een onafhankelijke adviseur laten meekijken met
+      bijvoorbeeld een versterkingsadvies of belangrijke keuzes in het traject.
+    </p>
+    <br />
+    <p>Hoe komt u in aanmerking?</p>
+    <ul className="pl-5">
+      <li>
+        1.Controleer of uw woning in een IMG-schadetraject of
+        NCG-versterkingstraject zit.
+      </li>
+      <li>2.Kies een onafhankelijke deskundige.</li>
+      <li>3.Vraag de regeling aan via IMG of NCG.</li>
+      <li>4.Na goedkeuring kan het advies worden uitgevoerd.</li>
+    </ul>
+    <p>
+      Voor vragen over de voorwaarden of het aanvragen van de regeling kunt u
+      contact opnemen met IMG of NCG zelf. Zij kunnen u informeren over de
+      mogelijkheden en de actuele regels.
+    </p>
+  </>
+);
+
 export default function VastlopendeTrajecten() {
   return (
     <main className="bg-white">
@@ -69,7 +118,11 @@ export default function VastlopendeTrajecten() {
         color="bg-[rgb(200,211,215)]"
       />
       <ServiceCards services={services} />
-      <TitleBox title="Kosten onafhankelijke ondersteuning" />
+      <Intro
+        title="Extra ondersteuning bij vastlopende trajecten"
+        className="text-start max-w-full"
+        message={message}
+      />
     </main>
   );
 }

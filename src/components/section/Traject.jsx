@@ -61,15 +61,13 @@ export default function Traject() {
               className="w-full h-48 object-cover"
             />
             <div className="p-5 flex-1 flex flex-col">
-              <h3 className="font-display font-semibold text-black mb-2 text-lg">
+              <h3 className="font-display font-bold text-black mb-2 text-2xl">
                 {t.title}
               </h3>
               <p className="text text-black mb-5">{t.question}</p>
               <p className="text text-black flex-1 mb-5">{t.description}</p>
-              <div
-                className="text-sm font-medium text-red-300 hover:opacity-80 transition-opacity flex"
-              >
-                Lees meer <div className=" group-hover:translate-x-2.5 duration-500">→</div>
+              <div className="text-sm font-medium text-[--border] hover:opacity-80 transition-opacity flex border px-2 py-1 w-fit border-[--border]">
+                Lees meer
               </div>
             </div>
             <a href={t.path} className=" absolute inset-0"></a>
