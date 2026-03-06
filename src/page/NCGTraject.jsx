@@ -94,7 +94,7 @@ const message = (
     </p>
     <a
       href="https://www.nationaalcoordinatorgroningen.nl/vergoedingen/eigenaren/advies/ncg"
-      className=" underline text-blue-500"
+      className=" underline text-blue-500 break-words"
     >
       https://www.nationaalcoordinatorgroningen.nl/vergoedingen/eigenaren/advies/ncg
     </a>
