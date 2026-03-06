@@ -7,7 +7,6 @@ import vt1 from "@/assets/vt1.png";
 import vt2 from "@/assets/vt2.png";
 import vt3 from "@/assets/vt3.png";
 import vt4 from "@/assets/vt4.png";
-import TitleBox from "@/components/ui/titleBox";
 import Intro from "@/components/section/Intro";
 
 const points = [

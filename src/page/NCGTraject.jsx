@@ -7,7 +7,6 @@ import ncg1 from "@/assets/ncg1.png";
 import ncg2 from "@/assets/ncg2.png";
 import ncg3 from "@/assets/ncg3.png";
 import ncg4 from "@/assets/ncg4.png";
-import TitleBox from "@/components/ui/titleBox";
 import Intro from "@/components/section/Intro";
 
 const points = [

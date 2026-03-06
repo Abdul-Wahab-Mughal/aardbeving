@@ -6,7 +6,6 @@ import traject3 from "@/assets/traject3_Ban.png";
 import dh1 from "@/assets/dh1.png";
 import dh2 from "@/assets/dh2.png";
 import dh3 from "@/assets/dh3.png";
-import TitleBox from "@/components/ui/titleBox";
 import Intro from "@/components/section/Intro";
 
 const points = [
