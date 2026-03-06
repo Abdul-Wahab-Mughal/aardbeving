@@ -13,7 +13,7 @@ export default function Points({ points, title, color, imgpagecolor }) {
               i % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"
             } ${color}`}
           >
-            <div className="w-full md:w-1/2 relative min-h-[333px]">
+            <div className="w-full md:w-1/2 relative min-h-[300px]">
               <img
                 src={point.image}
                 alt={point.title}

@@ -67,6 +67,31 @@ const services = [
 const message = (
   <>
     <p>
+      Bij een schadeprocedure via het Instituut Mijnbouwschade Groningen (IMG)
+      kunt u een onafhankelijke deskundige inschakelen via de regeling
+      deskundigenbijstand. In sommige gevallen vergoedt het IMG de kosten
+      hiervan.
+    </p>
+
+    <p>
+      U kunt de aanvraag doen door in te loggen met DigiD op Mijn Dossier via:
+    </p>
+    <a href="https://www.schadedoormijnbouw.nl/mijn-dossier" className=" underline">
+      https://www.schadedoormijnbouw.nl/mijn-dossier
+    </a>
+
+    <p>
+      Open uw zaaknummer en vraag binnen uw dossier deskundigenbijstand aan.
+      Daarbij kunt u een onafhankelijke deskundige selecteren uit de beschikbare
+      lijst. Na goedkeuring van het IMG kan de deskundige uw dossier beoordelen.
+    </p>
+
+    <p>
+      Voor vragen over de regeling of de voorwaarden kunt u contact opnemen met
+      het IMG zelf. Zij kunnen u informeren over de actuele regels en
+      mogelijkheden.
+    </p>
+    {/* <p>
       Bij schadeafhandeling via het Instituut Mijnbouwschade Groningen (IMG)
       kunt u in bepaalde situaties een eigen deskundige inschakelen. Het IMG
     </p>
@@ -97,7 +122,7 @@ const message = (
       className=" underline"
     >
       https://www.schadedoormijnbouw.nl/deskundigenbijstand
-    </a>
+    </a> */}
   </>
 );
 
