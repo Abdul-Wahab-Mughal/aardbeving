@@ -125,7 +125,7 @@ export default function Context() {
         <div className="relative w-full h-full rounded-2xl overflow-hidden">
           <img src={bannar} alt="" className="w-full h-full object-cover" />
           <div className=" absolute inset-0 h-full w-full bg-black/25"></div>
-          <div className=" absolute m-2.5 left-0 md:left-10 top-0 md:top-20 max-w-xl w-full">
+          <div className=" absolute p-2.5 left-0 md:left-10 top-0 md:top-20 max-w-xl w-full">
             <div className=" p-5 md:p-10 bg-white text-black rounded-xl md:rounded space-y-5 w-full">
               <h2 className="font-semibold text-2xl leading-none">
                 Aanvraag onafhankelijke ondersteuning

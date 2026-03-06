@@ -72,57 +72,28 @@ const message = (
       deskundigenbijstand. In sommige gevallen vergoedt het IMG de kosten
       hiervan.
     </p>
-
+    <br />
     <p>
       U kunt de aanvraag doen door in te loggen met DigiD op Mijn Dossier via:
     </p>
-    <a href="https://www.schadedoormijnbouw.nl/mijn-dossier" className=" underline text-blue-500">
+    <a
+      href="https://www.schadedoormijnbouw.nl/mijn-dossier"
+      className=" underline text-blue-500"
+    >
       https://www.schadedoormijnbouw.nl/mijn-dossier
     </a>
-
+    <br />
     <p>
       Open uw zaaknummer en vraag binnen uw dossier deskundigenbijstand aan.
       Daarbij kunt u een onafhankelijke deskundige selecteren uit de beschikbare
       lijst. Na goedkeuring van het IMG kan de deskundige uw dossier beoordelen.
     </p>
-
+    <br />
     <p>
       Voor vragen over de regeling of de voorwaarden kunt u contact opnemen met
       het IMG zelf. Zij kunnen u informeren over de actuele regels en
       mogelijkheden.
     </p>
-    {/* <p>
-      Bij schadeafhandeling via het Instituut Mijnbouwschade Groningen (IMG)
-      kunt u in bepaalde situaties een eigen deskundige inschakelen. Het IMG
-    </p>
-    <p>
-      kan de kosten van deze deskundige vergoeden. Dit wordt deskundigenbijstand
-      genoemd.
-    </p>
-    <p>
-      De regeling is bedoeld voor situaties waarin u extra technische
-      ondersteuning nodig heeft, bijvoorbeeld wanneer u twijfelt aan een
-      schadebeoordeling of een besluit inhoudelijk wilt laten toetsen.
-    </p>
-    <p>Hoe werkt de aanvraag?</p>
-    <ul className="pl-5">
-      <li>1.U kiest een onafhankelijke deskundige.</li>
-      <li>2.U vraagt vooraf toestemming aan bij het IMG.</li>
-      <li>3.Na goedkeuring kan de deskundige uw dossier beoordelen.</li>
-      <li>4.De kosten worden vergoed volgens de voorwaarden van het IMG.</li>
-    </ul>
-    <p>
-      Voor vragen over de regeling, de voorwaarden of de aanvraagprocedure kunt
-      u contact opnemen met het IMG zelf. Zij kunnen u informeren over de
-      mogelijkheden en de actuele regels.
-    </p>
-    <p>Meer informatie vindt u op de website van het IMG:</p>
-    <a
-      href="https://www.schadedoormijnbouw.nl/deskundigenbijstand"
-      className=" underline"
-    >
-      https://www.schadedoormijnbouw.nl/deskundigenbijstand
-    </a> */}
   </>
 );
 
