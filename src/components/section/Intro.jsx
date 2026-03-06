@@ -2,15 +2,22 @@ import React from "react";
 import TitleBox from "../ui/titleBox";
 import { ChevronRight } from "lucide-react";
 
-export default function Intro({ title, subtitle, message, box, className }) {
+export default function Intro({
+  title,
+  subtitle,
+  message,
+  box,
+  className,
+  color,
+}) {
   return (
-    <section className="mb-10">
+    <section className={`pb-10 ${color} overflow-hidden`}>
       <TitleBox title={title} />
       <div
-        className={` py-12 max-w-5xl m-auto text-center space-y-4 px-5 lg:px-20 text-black text-lg whitespace-pre-line ${className}`}
+        className={`py-5 md:py-12 max-w-5xl m-auto text-center space-y-4 px-5 lg:px-20 text-black text-lg whitespace-pre-line ${className}`}
       >
-        <p className=" leading-relaxed font-bold">{subtitle}</p>
-        <p className=" leading-relaxed">{message}</p>
+        {subtitle && <p className=" leading-relaxed font-bold">{subtitle}</p>}
+        <p className="max-sm:text-sm leading-relaxed">{message}</p>
       </div>
       {box && (
         <div className="bg-[--background_box] max-w-xl m-auto p-10 rounded-[50px] w-full text-white">
@@ -40,7 +47,7 @@ export default function Intro({ title, subtitle, message, box, className }) {
             href="/over-abb"
             className="text-orange-400 border border-orange-400 px-2 py-1"
           >
-            Laat vw dossier beoordelen
+            Laat uw dossier beoordelen
           </a>
         </div>
       )}

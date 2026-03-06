@@ -55,7 +55,7 @@ const services = [
   {
     title: "Inzicht in onderliggende oorzaken en samenhang",
     description:
-      "Wij analyseren niet alleen zichtbare schade, maar ook de achterliggende oorzaken en de samenhang tussen verschillende problemen in uw woning",
+      "Wij analyseren niet alleen zichtbare schade, maar ook de achterliggende oorzaken en de samenhang tussen verschillende problemen in uw woning.",
   },
   {
     title: "Technische onderbouwing bij bezwaar of vervolgstappen",
@@ -106,6 +106,7 @@ export default function ImgTraject() {
     <main className="bg-white">
       <Bannar title="IMG-traject (schade)" image={banner} />
       <Points
+        imgpagecolor
         points={points}
         title="Twijfelt u aan een schadebeoordeling van het IMG?"
         color="bg-[rgb(251,242,243)]"

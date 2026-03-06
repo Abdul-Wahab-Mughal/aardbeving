@@ -50,7 +50,7 @@ export default function Traject() {
     <section>
       <TitleBox title="Kies uw traject" />
       <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-12 px-5 lg:px-20 text-black container m-auto">
-        {traject.map((t) => (
+        {traject.map((t, index) => (
           <div
             key={t.path}
             className={`${t.bg} rounded-sm overflow-hidden flex flex-col relative hover:scale-105 duration-500 group`}
@@ -66,7 +66,11 @@ export default function Traject() {
               </h3>
               <p className="text text-black mb-5">{t.question}</p>
               <p className="text text-black flex-1 mb-5">{t.description}</p>
-              <div className="text-sm font-medium text-[--border] hover:opacity-80 transition-opacity flex border px-2 py-1 w-fit border-[--border]">
+              <div
+                className={`text-sm font-medium text-[--border] hover:opacity-80 transition-opacity flex border px-2 py-1 w-fit border-[--border] ${
+                  index === 1 && "border-orange-500 text-orange-500"
+                }`}
+              >
                 Lees meer
               </div>
             </div>

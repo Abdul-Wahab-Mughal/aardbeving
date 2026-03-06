@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Bannar({ title, image }) {
   return (
-    <section className="relative h-[88vh] min-h-[500px] max-h-[1000px] flex items-center justify-center">
+    <section className="relative h-[88vh] min-h-[500px] max-h-[500px] flex items-center justify-center">
       <img
         src={image}
         alt="Aardbevingsschade Groningen"

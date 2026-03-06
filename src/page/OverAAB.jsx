@@ -15,7 +15,7 @@ export default function OverAAB() {
             alleen naar losse onderdelen wordt gekeken, maar naar de woning en
             het dossier als geheel. Schade, versterking en duurzaam herstel
             hangen vaak met elkaar samen. Wanneer deze onderdelen afzonderlijk
-            worden beoordeeld, kan belangrijke samenhang verloren gaan
+            worden beoordeeld, kan belangrijke samenhang verloren gaan.
           </p>
           <br />
           <p>
@@ -28,7 +28,7 @@ export default function OverAAB() {
           <p>
             AAB voert geen herstel- of bouwwerkzaamheden uit en heeft geen
             commercieel belang bij de uitkomst van besluiten. Onze adviezen zijn
-            gebaseerd op een onafhankelijke technische beoordeling
+            gebaseerd op een onafhankelijke technische beoordeling.
           </p>
         </div>
       </section>
@@ -66,7 +66,7 @@ export default function OverAAB() {
           <p>
             Wij zijn geen onderdeel van het IMG of de NCG en nemen geen
             besluiten over schade, versterking of regelingen. Die
-            verantwoordelijkheid blijft bij de betreffende instanties
+            verantwoordelijkheid blijft bij de betreffende instanties.
           </p>
           <br />
           <p>
@@ -80,7 +80,7 @@ export default function OverAAB() {
           <br />
           <h5 className="text-xl font-bold">
             Twijfelt u over uw dossier of wilt u weten wat technisch klopt? Neem
-            gerust contact met ons op voor een eerste verkenning
+            gerust contact met ons op voor een eerste verkenning.
           </h5>
         </div>
       </section>

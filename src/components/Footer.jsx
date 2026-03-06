@@ -12,8 +12,8 @@ export default function Footer({ navItems }) {
   }
   return (
     <footer>
-      <div className=" bg-gray-200 relative">
-        <div className=" grid grid-cols-1 md:grid-cols-3 gap-8 container m-auto max-md:text-center py-12 px-5 lg:px-20">
+      <div className=" bg-[rgb(207,207,207)] relative">
+        <div className=" grid grid-cols-1 md:grid-cols-3 gap-8 container m-auto max-md:text-center py-5 px-5 lg:px-10">
           <div>
             <img
               src={logo}
@@ -23,7 +23,7 @@ export default function Footer({ navItems }) {
           </div>
           <div>
             <h4 className=" text-lg font-semibold mb-4 text-black">Algemeen</h4>
-            <ul className="space-y-1.5 text-sm text-[--background_box] ">
+            <ul className=" text-sm text-[--background_box] ">
               {navItems.map((item) => (
                 <li key={item.path}>
                   <Link

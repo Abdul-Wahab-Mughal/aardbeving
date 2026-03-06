@@ -14,14 +14,15 @@ export default function Index() {
       />
       <Traject />
       <Intro
+        color="bg-gray-200"
         box
         title="Wanneer uw dossier technisch niet klopt."
         subtitle="Wij beoordelen uw woning integraal, niet per regeling maar als één technisch geheel."
-        message={`Als onafhankelijk technisch adviseur kijken wij kritisch naar rapporten, besluiten en de samenhang tussen schade, versterking en herstel
+        message={`Als onafhankelijk technisch adviseur kijken wij kritisch naar rapporten, besluiten en de samenhang tussen schade, versterking en herstel.
         
         Veel bewoners lopen vast doordat schade, versterking en herstel als losse trajecten worden behandeld, terwijl het om één woning gaat. 
         
-        Aardbeving Adviesbureau (AAB) ondersteunt bewoners als onafhankelijk technisch adviseur wanneer trajecten vastlopen. Wij brengen overzicht, duiding en rust in complexe situatie`}
+        Aardbeving Adviesbureau (AAB) ondersteunt bewoners als onafhankelijk technisch adviseur wanneer trajecten vastlopen. Wij brengen overzicht, duiding en rust in complexe situatie.`}
       />
       <Testimonials title="Hoe wij het aanpakken" />
     </main>

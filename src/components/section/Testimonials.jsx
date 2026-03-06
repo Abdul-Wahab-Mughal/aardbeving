@@ -17,7 +17,7 @@ const testimonials = [
     name: "Versterkingsadvies voelt onlogisch",
     text: `Soms voelt een versterkingsadvies niet logisch of passend bij de situatie van uw woning.
 
-    AAB beoordeelt het versterkingsadvies onafhankelijk en analyseert of de voorgestelde maatregelen technisch logisch en goed onderbouwd zijn`,
+    AAB beoordeelt het versterkingsadvies onafhankelijk en analyseert of de voorgestelde maatregelen technisch logisch en goed onderbouwd zijn.`,
     image: testimonial2,
   },
   {
@@ -35,9 +35,9 @@ export default function Testimonials({ title }) {
       <TitleBox title={title} />
       <div className=" py-12 px-5 lg:px-20 container m-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((t) => (
+          {testimonials.map((t, index) => (
             <div
-              key={t.name}
+              key={index}
               className="bg-card rounded-sm overflow-hidden text-black flex flex-col"
             >
               <img
@@ -45,7 +45,7 @@ export default function Testimonials({ title }) {
                 alt={t.name}
                 className="w-full h-48 object-cover"
               />
-              <div className="py-2.5 flex flex-col">
+              <div className="py-2.5 flex flex-col flex-1">
                 <h3 className=" font-semibold text-foreground mb-2">
                   {t.name}
                 </h3>
@@ -54,7 +54,9 @@ export default function Testimonials({ title }) {
                 </p>
                 <Link
                   to="/contact"
-                  className="text-sm font-medium text-[--border] hover:opacity-80 transition-opacity flex border px-2 py-1 w-fit border-[--border]"
+                  className={`text-sm font-medium mt-auto text-[--border] hover:opacity-80 transition-opacity flex border px-2 py-1 w-fit border-[--border] ${
+                    index == 0 && "border-orange-500 text-orange-500"
+                  }`}
                 >
                   Lees meer
                 </Link>

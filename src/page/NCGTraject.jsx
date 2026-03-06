@@ -55,7 +55,7 @@ const services = [
   {
     title: "Samenhang tussen schade, versterking en toekoms",
     description:
-      "Schadeherstel, versterking en uw woonwensen voor de toekomst staan niet los van elkaar. Wij helpen u om deze aspecten in samenhang te bekijken, zodat beslissingen nu ook passen bij hoe u straks wilt wonen",
+      "Schadeherstel, versterking en uw woonwensen voor de toekomst staan niet los van elkaar. Wij helpen u om deze aspecten in samenhang te bekijken, zodat beslissingen nu ook passen bij hoe u straks wilt wonen.",
   },
   {
     title: "Ondersteuning bij keuzes en gesprekken",
@@ -98,7 +98,7 @@ const message = (
     </a>
     <p>
       Wilt u weten wat een onafhankelijke beoordeling in uw situatie kan
-      betekenen? Neem dan contact met ons op voor een eerste verkenning
+      betekenen? Neem dan contact met ons op voor een eerste verkenning.
     </p>
   </>
 );

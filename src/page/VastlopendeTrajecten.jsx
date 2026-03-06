@@ -28,14 +28,14 @@ const points = [
   {
     title: "Niemand bewaakt het geheel",
     description:
-      "Elk traject heeft zijn eigen regels en beoordelaars, waardoor een integrale blik op uw woning vaak ontbreekt. Belangrijke samenhangen blijven daardoor onderbelicht. AAB bekijkt uw woning en dossier als geheel en maakt deze samenhang inzichtelijk",
+      "Elk traject heeft zijn eigen regels en beoordelaars, waardoor een integrale blik op uw woning vaak ontbreekt. Belangrijke samenhangen blijven daardoor onderbelicht. AAB bekijkt uw woning en dossier als geheel en maakt deze samenhang inzichtelijk.",
     image: vt3,
     btn: "Laat uw dossier beoordelen",
   },
   {
     title: "Mentale en financiële uitputting",
     description:
-      "Langdurige procedures, onzekerheid en steeds terugkerende problemen kunnen zwaar wegen, zowel emotioneel als financieel. AAB helpt om uw dossier helder te analyseren en weer richting te geven aan het traject",
+      "Langdurige procedures, onzekerheid en steeds terugkerende problemen kunnen zwaar wegen, zowel emotioneel als financieel. AAB helpt om uw dossier helder te analyseren en weer richting te geven aan het traject.",
     image: vt4,
     btn: "Laat uw dossier beoordelen",
   },
