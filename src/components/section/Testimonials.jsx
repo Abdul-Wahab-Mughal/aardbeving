@@ -38,7 +38,7 @@ export default function Testimonials({ title }) {
           {testimonials.map((t, index) => (
             <div
               key={index}
-              className="bg-card rounded-sm overflow-hidden text-black flex flex-col"
+              className="bg-card rounded-sm overflow-hidden text-black flex flex-col max-md:text-center"
             >
               <img
                 src={t.image}
@@ -54,9 +54,7 @@ export default function Testimonials({ title }) {
                 </p>
                 <Link
                   to="/contact"
-                  className={`text-sm font-medium mt-auto text-[--border] hover:opacity-80 transition-opacity flex border px-2 py-1 w-fit border-[--border] ${
-                    index == 0 && "border-orange-500 text-orange-500"
-                  }`}
+                  className={`text-sm font-medium mt-auto text-[--border] hover:opacity-80 transition-opacity flex border px-2 py-1 w-fit border-[--border] hover:border-orange-500 hover:text-orange-500 max-md:m-auto`}
                 >
                   Lees meer
                 </Link>

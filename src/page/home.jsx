@@ -16,7 +16,7 @@ export default function Index() {
       <Intro
         color="bg-gray-200"
         box
-        title="Wanneer uw dossier technisch niet klopt."
+        title="Wanneer uw dossier technisch niet klopt"
         subtitle="Wij beoordelen uw woning integraal, niet per regeling maar als één technisch geheel."
         message={`Als onafhankelijk technisch adviseur kijken wij kritisch naar rapporten, besluiten en de samenhang tussen schade, versterking en herstel.
         

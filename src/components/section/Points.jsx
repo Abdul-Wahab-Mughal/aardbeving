@@ -1,7 +1,7 @@
 import React from "react";
 import TitleBox from "../ui/titleBox";
 
-export default function Points({ points, title, color, imgpagecolor }) {
+export default function Points({ points, title, color }) {
   return (
     <section>
       <TitleBox title={title} />
@@ -32,11 +32,7 @@ export default function Points({ points, title, color, imgpagecolor }) {
               <div className="flex flex-col h-full">
                 <a
                   href="/contact"
-                  className={` text-black max-sm:text-xs w-fit border-2 border-[--border] py-1 p-5 rounded mt-auto ${
-                    imgpagecolor &&
-                    i === 0 &&
-                    "border-orange-500 text-orange-500"
-                  }`}
+                  className={` text-black max-sm:text-xs w-fit border-2 border-[--border] py-1 p-5 rounded mt-auto hover:border-orange-500 hover:text-orange-500`}
                 >
                   {point.btn}
                 </a>

@@ -67,9 +67,7 @@ export default function Traject() {
               <p className="text text-black mb-5">{t.question}</p>
               <p className="text text-black flex-1 mb-5">{t.description}</p>
               <div
-                className={`text-sm font-medium text-[--border] hover:opacity-80 transition-opacity flex border px-2 py-1 w-fit border-[--border] ${
-                  index === 1 && "border-orange-500 text-orange-500"
-                }`}
+                className={`text-sm font-medium text-[--border] hover:opacity-80 transition-opacity flex border px-2 py-1 w-fit border-[--border] group-hover:border-orange-500 group-hover:text-orange-500`}
               >
                 Lees meer
               </div>

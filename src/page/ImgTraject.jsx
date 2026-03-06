@@ -76,7 +76,7 @@ const message = (
     <p>
       U kunt de aanvraag doen door in te loggen met DigiD op Mijn Dossier via:
     </p>
-    <a href="https://www.schadedoormijnbouw.nl/mijn-dossier" className=" underline">
+    <a href="https://www.schadedoormijnbouw.nl/mijn-dossier" className=" underline text-blue-500">
       https://www.schadedoormijnbouw.nl/mijn-dossier
     </a>
 
@@ -131,7 +131,6 @@ export default function ImgTraject() {
     <main className="bg-white">
       <Bannar title="IMG-traject (schade)" image={banner} />
       <Points
-        imgpagecolor
         points={points}
         title="Twijfelt u aan een schadebeoordeling van het IMG?"
         color="bg-[rgb(251,242,243)]"

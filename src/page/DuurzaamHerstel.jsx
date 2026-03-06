@@ -63,7 +63,6 @@ const message = (
       deskundige vergoed krijgen. Welke regeling van toepassing is, hangt af van
       het traject waarin uw woning zit.
     </p>
-    <br />
     <p>Schade – IMG</p>
     <p>
       Heeft u een schadeprocedure bij het Instituut Mijnbouwschade Groningen
@@ -72,7 +71,6 @@ const message = (
       inschakelen om een schadebeoordeling of besluit te laten toetsen.
       Aanvragen verloopt via het IMG en moet meestal vooraf worden goedgekeurd.
     </p>
-    <br />
     <p>Versterking – NCG</p>
     <p>
       Valt uw woning onder de versterkingsopgave van de Nationaal Coördinator
@@ -80,7 +78,6 @@ const message = (
       Advies. Hiermee kunt u een onafhankelijke adviseur laten meekijken met
       bijvoorbeeld een versterkingsadvies of belangrijke keuzes in het traject.
     </p>
-    <br />
     <p>Hoe komt u in aanmerking?</p>
     <ul className="pl-5">
       <li>
@@ -102,7 +99,7 @@ const message = (
 export default function DuurzaamHerstel() {
   return (
     <main className="bg-white">
-      <Bannar title="Duurzaam Herstel" image={traject3} />
+      <Bannar title="Duurzaam herstel" image={traject3} />
       <Points
         points={points}
         title="Zijn de volgende punten herkenbaar voor u?"

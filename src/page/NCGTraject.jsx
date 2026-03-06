@@ -92,7 +92,7 @@ const message = (
     </p>
     <a
       href="https://www.nationaalcoordinatorgroningen.nl/vergoedingen/eigenaren/advies/ncg"
-      className=" underline"
+      className=" underline text-blue-500"
     >
       https://www.nationaalcoordinatorgroningen.nl/vergoedingen/eigenaren/advies/ncg
     </a>
@@ -113,7 +113,11 @@ export default function NCGTraject() {
         color="bg-[rgb(241,239,227)]"
       />
       <ServiceCards services={services} />
-      <Intro title="Regeling Onafhankelijk Advies NCG" className="text-start max-w-full" message={message} />
+      <Intro
+        title="Regeling Onafhankelijk Advies NCG"
+        className="text-start max-w-full"
+        message={message}
+      />
     </main>
   );
 }
