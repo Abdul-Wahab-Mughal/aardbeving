@@ -99,6 +99,7 @@ const message = (
       <li>3.Vraag de regeling aan via IMG of NCG.</li>
       <li>4.Na goedkeuring kan het advies worden uitgevoerd.</li>
     </ul>
+    <br/>
     <p>
       Voor vragen over de voorwaarden of het aanvragen van de regeling kunt u
       contact opnemen met IMG of NCG zelf. Zij kunnen u informeren over de
