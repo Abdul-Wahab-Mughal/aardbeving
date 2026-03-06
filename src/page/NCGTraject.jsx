@@ -71,12 +71,14 @@ const message = (
       kosten van de NCG een onafhankelijke adviseur inschakelen om een
       versterkingsadvies technisch te laten beoordelen.
     </p>
+    <br/>
     <p>
       Deze regeling is bedoeld voor situaties waarin u twijfelt aan de inhoud,
       onderbouwing of gevolgen van een versterkingsrapport. De adviseur moet
       onafhankelijk zijn en mag niet eerder betrokken zijn geweest bij uw
       dossier.
     </p>
+    <br />
     <p>Hoe vraagt u dit aan?</p>
     <ul className="pl-5">
       <li>1.Kies een onafhankelijke adviseur</li>
@@ -86,6 +88,7 @@ const message = (
         4.De kosten worden vergoed volgens de voorwaarden van de regeling.
       </li>
     </ul>
+    <br />
     <p>
       De actuele voorwaarden en het aanvraagformulier vindt u op de website van
       de NCG:

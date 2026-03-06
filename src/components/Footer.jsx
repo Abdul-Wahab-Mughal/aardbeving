@@ -41,7 +41,14 @@ export default function Footer({ navItems }) {
               <a href="/contact">Contact</a>
             </h4>
             <div className=" text-sm text-[--background_box] space-y-1.5">
-              <p className="md:max-w-32">Ulgersmaweg 47-A 9731BK Groningen</p>
+              <p className="md:max-w-32">
+                <a
+                  href="https://maps.app.goo.gl/62RCmQKqXjjSPzpD6"
+                  target="_blank"
+                >
+                  Ulgersmaweg 47-A 9731BK Groningen
+                </a>
+              </p>
               <p className="pt-2">
                 <a
                   href="mailto:info@aardbeving-adviesbureau.nl"
