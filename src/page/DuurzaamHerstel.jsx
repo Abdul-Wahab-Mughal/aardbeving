@@ -7,6 +7,7 @@ import dh1 from "@/assets/dh1.png";
 import dh2 from "@/assets/dh2.png";
 import dh3 from "@/assets/dh3.png";
 import Intro from "@/components/section/Intro";
+import { Helmet } from "react-helmet-async";
 
 const points = [
   {
@@ -62,7 +63,7 @@ const message = (
       deskundige vergoed krijgen. Welke regeling van toepassing is, hangt af van
       het traject waarin uw woning zit.
     </p>
-    <br/>
+    <br />
     <p>Schade – IMG</p>
     <p>
       Heeft u een schadeprocedure bij het Instituut Mijnbouwschade Groningen
@@ -71,7 +72,7 @@ const message = (
       inschakelen om een schadebeoordeling of besluit te laten toetsen.
       Aanvragen verloopt via het IMG en moet meestal vooraf worden goedgekeurd.
     </p>
-    <br/>
+    <br />
     <p>Versterking – NCG</p>
     <p>
       Valt uw woning onder de versterkingsopgave van de Nationaal Coördinator
@@ -79,7 +80,7 @@ const message = (
       Advies. Hiermee kunt u een onafhankelijke adviseur laten meekijken met
       bijvoorbeeld een versterkingsadvies of belangrijke keuzes in het traject.
     </p>
-    <br/>
+    <br />
     <p>Hoe komt u in aanmerking?</p>
     <ul className="pl-5">
       <li>
@@ -90,7 +91,7 @@ const message = (
       <li>3.Vraag de regeling aan via IMG of NCG.</li>
       <li>4.Na goedkeuring kan het advies worden uitgevoerd.</li>
     </ul>
-    <br/>
+    <br />
     <p>
       Voor vragen over de voorwaarden of het aanvragen van de regeling kunt u
       contact opnemen met IMG of NCG zelf. Zij kunnen u informeren over de
@@ -102,6 +103,13 @@ const message = (
 export default function DuurzaamHerstel() {
   return (
     <main className="bg-white">
+      <Helmet>
+        <title>Duurzaam Herstel | Aardbeving Adviesbureau</title>
+        <meta
+          name="description"
+          content="Neem contact op met Aardbeving Adviesbureau in Groningen."
+        />
+      </Helmet>
       <Bannar title="Duurzaam herstel" image={traject3} />
       <Points
         points={points}

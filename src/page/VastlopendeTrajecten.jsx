@@ -8,6 +8,7 @@ import vt2 from "@/assets/vt2.png";
 import vt3 from "@/assets/vt3.png";
 import vt4 from "@/assets/vt4.png";
 import Intro from "@/components/section/Intro";
+import { Helmet } from "react-helmet-async";
 
 const points = [
   {
@@ -99,7 +100,7 @@ const message = (
       <li>3.Vraag de regeling aan via IMG of NCG.</li>
       <li>4.Na goedkeuring kan het advies worden uitgevoerd.</li>
     </ul>
-    <br/>
+    <br />
     <p>
       Voor vragen over de voorwaarden of het aanvragen van de regeling kunt u
       contact opnemen met IMG of NCG zelf. Zij kunnen u informeren over de
@@ -111,6 +112,13 @@ const message = (
 export default function VastlopendeTrajecten() {
   return (
     <main className="bg-white">
+      <Helmet>
+        <title>Vastlopende Trajecten | Aardbeving Adviesbureau</title>
+        <meta
+          name="description"
+          content="Neem contact op met Aardbeving Adviesbureau in Groningen."
+        />
+      </Helmet>
       <Bannar title="Vastlopende trajecten" image={traject4} />
       <Points
         points={points}

@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@radix-ui/react-label";
 import emailjs from "@emailjs/browser";
+import { Helmet } from "react-helmet-async";
 
 export default function Context() {
   const [step, setStep] = useState(1);
@@ -120,7 +121,14 @@ export default function Context() {
   }
 
   return (
-    <main>
+    <main1>
+      <Helmet>
+        <title>Contact | Aardbeving Adviesbureau</title>
+        <meta
+          name="description"
+          content="Neem contact op met Aardbeving Adviesbureau in Groningen."
+        />
+      </Helmet>
       <section className="h-screen w-full p-5 bg-[--background_box]">
         <div className="relative w-full h-full rounded-2xl overflow-hidden">
           <img src={bannar} alt="" className="w-full h-full object-cover" />
@@ -698,6 +706,6 @@ export default function Context() {
           )}
         </div>
       </section>
-    </main>
+    </main1>
   );
 }

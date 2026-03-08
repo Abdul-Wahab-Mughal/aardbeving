@@ -4,10 +4,18 @@ import Testimonials from "@/components/section/Testimonials";
 import Traject from "@/components/section/Traject";
 import React from "react";
 import heroBg from "@/assets/hero-bg.jpg";
+import { Helmet } from "react-helmet-async";
 
 export default function Index() {
   return (
     <main className="bg-white">
+      <Helmet>
+        <title>Aardbeving Adviesbureau Groningen</title>
+        <meta
+          name="description"
+          content="Onafhankelijke technische dossieranalyse bij aardbevingsschade in Groningen."
+        />
+      </Helmet>
       <Bannar
         title="Onafhankelijke technische dossieranalyse bij schade, versterking en vastgelopen dossiers."
         image={heroBg}

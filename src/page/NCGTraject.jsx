@@ -8,6 +8,7 @@ import ncg2 from "@/assets/ncg2.png";
 import ncg3 from "@/assets/ncg3.png";
 import ncg4 from "@/assets/ncg4.png";
 import Intro from "@/components/section/Intro";
+import { Helmet } from "react-helmet-async";
 
 const points = [
   {
@@ -70,7 +71,7 @@ const message = (
       kosten van de NCG een onafhankelijke adviseur inschakelen om een
       versterkingsadvies technisch te laten beoordelen.
     </p>
-    <br/>
+    <br />
     <p>
       Deze regeling is bedoeld voor situaties waarin u twijfelt aan de inhoud,
       onderbouwing of gevolgen van een versterkingsrapport. De adviseur moet
@@ -108,6 +109,13 @@ const message = (
 export default function NCGTraject() {
   return (
     <main className="bg-white">
+      <Helmet>
+        <title>NCG Versterking Advies | Aardbeving Adviesbureau</title>
+        <meta
+          name="description"
+          content="Advies bij NCG versterkingstraject en beoordeling van versterkingsrapporten."
+        />
+      </Helmet> 
       <Bannar title="NCG-traject (Versterking)" image={traject2} />
       <Points
         points={points}

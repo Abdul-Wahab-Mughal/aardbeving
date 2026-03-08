@@ -2,10 +2,18 @@ import Bannar from "@/components/section/Bannar";
 import TitleBox from "@/components/ui/titleBox";
 import React from "react";
 import aab from "@/assets/aab.png";
+import { Helmet } from "react-helmet-async";
 
 export default function OverAAB() {
   return (
     <main className="bg-white">
+      <Helmet>
+        <title>Over aab | Aardbeving Adviesbureau</title>
+        <meta
+          name="description"
+          content="Neem contact op met Aardbeving Adviesbureau in Groningen."
+        />
+      </Helmet>
       <Bannar title="Over AAB" image={aab} />
       <section className="bg-gray-200">
         <TitleBox title="Onze visie" />
@@ -62,7 +70,7 @@ export default function OverAAB() {
           <h4 className="text-2xl font-bold">
             AAB is een onafhankelijke technisch adviseur voor bewoners.
           </h4>
-          <br/>
+          <br />
           <p>
             Wij zijn geen onderdeel van het IMG of de NCG en nemen geen
             besluiten over schade, versterking of regelingen. Die

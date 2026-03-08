@@ -8,6 +8,7 @@ import img2 from "@/assets/img2.png";
 import img3 from "@/assets/img3.png";
 import img4 from "@/assets/img4.png";
 import Intro from "@/components/section/Intro";
+import { Helmet } from "react-helmet-async";
 
 const points = [
   {
@@ -99,6 +100,13 @@ const message = (
 export default function ImgTraject() {
   return (
     <main className="bg-white">
+      <Helmet>
+        <title>IMG Traject | Aardbeving Adviesbureau</title>
+        <meta
+          name="description"
+          content="Onafhankelijke ondersteuning bij IMG schadeclaims en technische dossieranalyse in Groningen."
+        />
+      </Helmet>
       <Bannar title="IMG-traject (schade)" image={banner} />
       <Points
         points={points}
