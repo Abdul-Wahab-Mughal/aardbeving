@@ -48,7 +48,7 @@ const traject = [
 export default function Traject() {
   return (
     <section>
-      <TitleBox title="Kies uw traject" />
+      <TitleBox title="Kies uw traject" shine />
       <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-12 px-5 lg:px-20 text-black container m-auto">
         {traject.map((t, index) => (
           <div

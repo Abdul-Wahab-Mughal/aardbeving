@@ -40,7 +40,7 @@ export default function OverAAB() {
           </p>
         </div>
       </section>
-      <section>
+      <section className="bg-gray-200">
         <TitleBox title="Onze werkwijze" />
         <div className=" container m-auto py-10 px-5 lg:px-20 text-black flex flex-col">
           <p>
