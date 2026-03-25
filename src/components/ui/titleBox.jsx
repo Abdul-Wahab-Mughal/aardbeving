@@ -18,7 +18,6 @@ export default function TitleBox({ title, shine }) {
         right: "100%",
         duration: 5,
         ease: "power1.inOut",
-        marker: true,
       }
     )
 
@@ -31,7 +30,6 @@ export default function TitleBox({ title, shine }) {
           ease: "power2.out",
           yoyo: true,
           repeat: 1,
-          marker: true,
         },
         2 // ⬅️ HALF of 4s = center timing
       );
