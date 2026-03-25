@@ -41,29 +41,13 @@ body {
     background-color: #ffffff;
   }
 }
-.text-effect {
-  animation: 5s ease 0s infinite normal none running text;
-}
-
-@keyframes text {
-  0%,
-  100% {
-    scale: 1;
-  }
-  15% {
-    scale: 1.25;
-  }
-  55% {
-    scale: 1;
-  }
-}
 
 .shine-effect {
   width: 50%;
   height: 100%;
   position: absolute;
   top: 0px;
-  right: -75%;
+  right: -50%;
   transform: skew(-20deg);
   background: linear-gradient(
     120deg,
@@ -71,16 +55,6 @@ body {
     rgba(255, 255, 255, 0.5),
     rgba(0, 0, 0, 0)
   );
-  animation: 5s ease 0s infinite normal none running shine;
-}
-
-@keyframes shine {
-  0% {
-    right: -75%;
-  }
-  100% {
-    right: 125%;
-  }
 }
 
 /* @layer base {
