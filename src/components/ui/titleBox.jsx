@@ -13,26 +13,27 @@ export default function TitleBox({ title, shine }) {
     // Shine animation
     tl.fromTo(
       shineRef.current,
-      { right: "-50%" },
+      { x: "-25%" },
       {
-        right: "100%",
-        duration: 5,
-        ease: "power1.inOut",
+        x: "25%",
+        duration: 3,
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
       }
-    )
-
       // 👇 Trigger scale exactly at center (~50% of timeline)
-      .to(
-        textRef.current,
-        {
-          scale: 1.25,
-          duration: 0.5,
-          ease: "power2.out",
-          yoyo: true,
-          repeat: 1,
-        },
-        2 // ⬅️ HALF of 4s = center timing
-      );
+    ).to(
+      textRef.current,
+      {
+        scale: 1.25,
+        duration: 2.5,
+        ease: "power2.out",
+        yoyo: true,
+        repeat: -1,
+      },
+      2 // ⬅️ HALF of 4s = center timing
+    );
+
   }, [shine]);
 
   return (
@@ -43,7 +44,12 @@ export default function TitleBox({ title, shine }) {
       >
         {title}
       </h2>
-      {shine && <div ref={shineRef} className=" shine-effect"></div>}
+      {shine && (
+        <div
+          ref={shineRef}
+          className="absolute top-0 left-0 w-[100%] h-full blur-xl rounded-full bg-gradient-to-r from-transparent via-white to-transparent"
+        ></div>
+      )}
     </div>
   );
 }

@@ -43,11 +43,11 @@ body {
 }
 
 .shine-effect {
-  width: 50%;
+  width: 25%;
   height: 100%;
   position: absolute;
   top: 0px;
-  right: -50%;
+  right: -0%;
   transform: skew(-20deg);
   background: linear-gradient(
     120deg,
