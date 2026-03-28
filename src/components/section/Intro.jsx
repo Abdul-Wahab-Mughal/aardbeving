@@ -7,6 +7,7 @@ export default function Intro({
   subtitle,
   message,
   box,
+  boxText,
   className,
   color,
 }) {
@@ -17,7 +18,24 @@ export default function Intro({
         className={`py-5 md:py-12 max-w-5xl m-auto text-center space-y-4 px-5 lg:px-20 text-black text-lg whitespace-pre-line ${className}`}
       >
         {subtitle && <p className=" leading-relaxed font-bold">{subtitle}</p>}
-        <p className="max-sm:text-sm leading-relaxed">{message}</p>
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2.5 w-full">
+          {boxText?.map((bt, index) => (
+            <div
+              key={index}
+              className=" border rounded-xl px-2.5 py-5 space-y-2.5 w-full"
+            >
+              <div className="flex gap-2.5">
+                <span className=" w-8 h-8 flex justify-center items-center bg-[--background_box] rounded-full text-white text-xl">
+                  {index + 1}
+                </span>
+                <bt.icon size={50} />
+              </div>
+              <h4 className="text-xl font-bold">{bt.title}</h4>
+              <p className="text-sm whitespace">{bt.message}</p>
+            </div>
+          ))}
+        </div>
+        {message && <p className="max-sm:text-sm leading-relaxed">{message}</p>}
       </div>
       {box && (
         <div className="px-5">

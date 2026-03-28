@@ -9,6 +9,7 @@ import vt3 from "@/assets/vt3.png";
 import vt4 from "@/assets/vt4.png";
 import Intro from "@/components/section/Intro";
 import { Helmet } from "react-helmet-async";
+import { BadgeEuroIcon, Check, FileCheck2, FileSearch2 } from "lucide-react";
 
 const points = [
   {
@@ -109,6 +110,44 @@ const message = (
   </>
 );
 
+const boxText = [
+  {
+    icon: FileSearch2,
+    title: "Vergoeding voor onafhankelijk advies",
+    message:
+      "In sommige situaties kunnen bewoners de kosten voor een onafhankelijke deskundige vergoed krijgen. Welke regeling van toepassing is, hangt af van het traject waarin uw woning zit.",
+  },
+  {
+    icon: BadgeEuroIcon,
+    title: "Schade – IMG",
+    message:
+      "Heeft u een schadeprocedure bij het Instituut Mijnbouwschade Groningen (IMG)? Dan kunt u mogelijk gebruikmaken van de regeling Deskundigenbijstand. Hiermee kunt u een eigen onafhankelijke deskundige inschakelen om een schadebeoordeling of besluit te laten toetsen. Aanvragen verloopt via het IMG en moet meestal vooraf worden goedgekeurd.",
+  },
+  {
+    icon: Check,
+    title: "Versterking – NCG",
+    message:
+      "Valt uw woning onder de versterkingsopgave van de Nationaal Coördinator Groningen (NCG)? Dan kunt u gebruikmaken van de regeling Onafhankelijk Advies. Hiermee kunt u een onafhankelijke adviseur laten meekijken met bijvoorbeeld een versterkingsadvies of belangrijke keuzes in het traject.",
+  },
+  {
+    icon: FileCheck2,
+    title: "Hoe komt u in aanmerking?",
+    message: (
+      <>
+        <ul>
+          <li>
+            1.Controleer of uw woning in een IMG-schadetraject of
+            NCG-versterkingstraject zit.
+          </li>
+          <li>2.Kies een onafhankelijke deskundige.</li>
+          <li>3.Vraag de regeling aan via IMG of NCG.</li>
+          <li>4.Na goedkeuring kan het advies worden uitgevoerd.</li>
+        </ul>
+      </>
+    ),
+  },
+];
+
 export default function VastlopendeTrajecten() {
   return (
     <main className="bg-white">
@@ -129,7 +168,8 @@ export default function VastlopendeTrajecten() {
       <Intro
         title="Extra ondersteuning bij vastlopende trajecten"
         className="text-start max-w-full"
-        message={message}
+        // message={message}
+        boxText={boxText}
       />
     </main>
   );

@@ -9,6 +9,7 @@ import ncg3 from "@/assets/ncg3.png";
 import ncg4 from "@/assets/ncg4.png";
 import Intro from "@/components/section/Intro";
 import { Helmet } from "react-helmet-async";
+import { BadgeEuroIcon, Check, FileCheck2, FileSearch2 } from "lucide-react";
 
 const points = [
   {
@@ -106,6 +107,55 @@ const message = (
   </>
 );
 
+const boxText = [
+  {
+    icon: FileSearch2,
+    title: "",
+    message:
+      "Valt uw woning onder de versterkingsopgave van de NCG? Dan kunt u op kosten van de NCG een onafhankelijke adviseur inschakelen om een versterkingsadvies technisch te laten beoordelen.",
+  },
+  {
+    icon: BadgeEuroIcon,
+    title: "",
+    message:
+      " Deze regeling is bedoeld voor situaties waarin u twijfelt aan de inhoud, onderbouwing of gevolgen van een versterkingsrapport. De adviseur moet onafhankelijk zijn en mag niet eerder betrokken zijn geweest bij uw dossier.",
+  },
+  {
+    icon: Check,
+    title: "Hoe vraagt u dit aan?",
+    message: (
+      <>
+        <ul>
+          <li>1.Kies een onafhankelijke adviseur</li>
+          <li>2.Vraag de vergoeding aan via de NCG-website.</li>
+          <li>3.Na goedkeuring kan de beoordeling worden uitgevoerd.</li>
+          <li>
+            4.De kosten worden vergoed volgens de voorwaarden van de regeling.
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    icon: FileCheck2,
+    title: "Hoe komt u in aanmerking?",
+    message: (
+      <>
+        <a
+          href="https://www.nationaalcoordinatorgroningen.nl/vergoedingen/eigenaren/advies/ncg"
+          className=" underline text-blue-500 break-words"
+        >
+          https://www.nationaalcoordinatorgroningen.nl/vergoedingen/eigenaren/advies/ncg
+        </a>
+        <p>
+          Wilt u weten wat een onafhankelijke beoordeling in uw situatie kan
+          betekenen? Neem dan contact met ons op voor een eerste verkenning.
+        </p>
+      </>
+    ),
+  },
+];
+
 export default function NCGTraject() {
   return (
     <main className="bg-white">
@@ -115,7 +165,7 @@ export default function NCGTraject() {
           name="description"
           content="Advies bij NCG versterkingstraject en beoordeling van versterkingsrapporten."
         />
-      </Helmet> 
+      </Helmet>
       <Bannar title="NCG-traject (Versterking)" image={traject2} />
       <Points
         points={points}
@@ -126,7 +176,8 @@ export default function NCGTraject() {
       <Intro
         title="Regeling Onafhankelijk Advies NCG"
         className="text-start max-w-full"
-        message={message}
+        // message={message}
+        boxText={boxText}
       />
     </main>
   );
