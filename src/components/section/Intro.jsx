@@ -31,11 +31,11 @@ export default function Intro({
                 <bt.icon size={50} />
               </div>
               <h4 className="text-xl font-bold">{bt.title}</h4>
-              <p className="text-sm whitespace">{bt.message}</p>
+              <div className="text-sm whitespace">{bt.message}</div>
             </div>
           ))}
         </div>
-        {message && <p className="max-sm:text-sm leading-relaxed">{message}</p>}
+        {message && <div className="max-sm:text-sm leading-relaxed">{message}</div>}
       </div>
       {box && (
         <div className="px-5">

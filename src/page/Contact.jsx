@@ -121,7 +121,7 @@ export default function Context() {
   }
 
   return (
-    <main1>
+    <main>
       <Helmet>
         <title>Contact | Aardbeving Adviesbureau</title>
         <meta
@@ -706,6 +706,6 @@ export default function Context() {
           )}
         </div>
       </section>
-    </main1>
+    </main>
   );
 }
