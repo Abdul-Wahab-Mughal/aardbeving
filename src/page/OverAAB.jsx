@@ -100,27 +100,6 @@ export default function OverAAB() {
               </p>
             </div>
           </div>
-          <div className=" hidden">
-            <p>
-              Een traject begint meestal met een eerste verkenning van uw
-              dossier. We bekijken welke rapporten en informatie beschikbaar
-              zijn en waar mogelijke vragen of onduidelijkheden zitten.
-            </p>
-            <br />
-            <p>
-              Vervolgens analyseren wij de technische inhoud van het dossier.
-              Daarbij kijken wij onder meer naar bouwkundige en constructieve
-              aspecten, eerdere opnames en de samenhang tussen schade,
-              versterking en herstel.
-            </p>
-            <br />
-            <p>
-              Onze bevindingen leggen wij vast in een duidelijke technische
-              analyse. Deze kan u helpen om beter te begrijpen wat er technisch
-              speelt en vormt een inhoudelijke basis voor gesprekken met
-              betrokken partijen.
-            </p>
-          </div>
         </div>
       </section>
       <section>
