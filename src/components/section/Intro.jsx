@@ -30,7 +30,7 @@ export default function Intro({
                 </span>
                 <bt.icon size={50} />
               </div>
-              <h4 className="text-xl font-bold">{bt.title}</h4>
+              <h4 className="font-bold">{bt.title}</h4>
               <div className="text-sm whitespace">{bt.message}</div>
             </div>
           ))}
