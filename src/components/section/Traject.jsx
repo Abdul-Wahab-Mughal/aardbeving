@@ -1,5 +1,5 @@
 import React from "react";
-import TitleBox from "../ui/titleBox";
+import KiesTrajectBar from "./KiesTrajectBar";
 import traject1 from "@/assets/traject1.png";
 import traject2 from "@/assets/traject2.png";
 import traject3 from "@/assets/traject3.png";
@@ -48,7 +48,7 @@ const traject = [
 export default function Traject() {
   return (
     <section>
-      <TitleBox title="Kies uw traject" shine />
+      <KiesTrajectBar />
       <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-12 px-5 lg:px-20 text-black container m-auto">
         {traject.map((t, index) => (
           <div
@@ -67,7 +67,7 @@ export default function Traject() {
               <p className="text text-black mb-5">{t.question}</p>
               <p className="text text-black flex-1 mb-5">{t.description}</p>
               <div
-                className={`text-sm font-medium text-[--border] hover:opacity-80 transition-opacity flex border px-2 py-1 w-fit border-[--border] group-hover:border-orange-500 group-hover:text-orange-500`}
+                className={`text-sm font-medium text-[--border] hover:opacity-80 transition-all duration-300 flex border px-2 py-1 w-fit border-[--border] group-hover:border-orange-500 group-hover:text-orange-500 group-hover:shadow-[0_0_0_3px_rgba(249,115,22,0.18),0_10px_22px_rgba(249,115,22,0.22)]`}
               >
                 Lees meer
               </div>

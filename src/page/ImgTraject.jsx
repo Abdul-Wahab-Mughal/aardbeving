@@ -2,13 +2,17 @@ import Bannar from "@/components/section/Bannar";
 import Points from "@/components/section/Points";
 import React from "react";
 import ServiceCards from "@/components/section/ServiceCards";
+import { BrickWall, FileCheck2, FileSearch2, Files } from "lucide-react";
 import banner from "@/assets/traject1.png";
 import img1 from "@/assets/img1.png";
 import img2 from "@/assets/img2.png";
 import img3 from "@/assets/img3.png";
 import img4 from "@/assets/img4.png";
-import Intro from "@/components/section/Intro";
+import TitleBox from "@/components/ui/titleBox";
 import { Helmet } from "react-helmet-async";
+import { REGELING_TILE_BADGE_CLASS } from "@/lib/regelingTiles";
+
+const MIJN_DOSSIER_URL = "https://www.schadedoormijnbouw.nl/mijn-dossier";
 
 const points = [
   {
@@ -43,59 +47,30 @@ const points = [
 
 const services = [
   {
+    icon: FileSearch2,
     title: "Onafhankelijke technische beoordeling van uw dossier",
     description:
       "Wij bekijken uw dossier met een frisse, onafhankelijke blik en beoordelen of onderzoeken en besluiten technisch en inhoudelijk kloppen.",
   },
   {
+    icon: FileCheck2,
     title: "Second opinion (contra-expertise)",
     description:
       "Twijfelt u aan een beoordeling? Wij voeren een tweede, onafhankelijke expertise uit en vergelijken deze met eerdere bevindingen.",
   },
   {
+    icon: BrickWall,
     title: "Inzicht in onderliggende oorzaken en samenhang",
     description:
       "Wij analyseren niet alleen zichtbare schade, maar ook de achterliggende oorzaken en de samenhang tussen verschillende problemen in uw woning.",
   },
   {
+    icon: Files,
     title: "Technische onderbouwing bij bezwaar of vervolgstappen",
     description:
       "Gaat u in bezwaar of wilt u vervolgstappen zetten? Wij leveren de benodigde technische onderbouwing en helpen u uw standpunt helder te onderbouwen.",
   },
 ];
-
-const message = (
-  <>
-    <p>
-      Bij een schadeprocedure via het Instituut Mijnbouwschade Groningen (IMG)
-      kunt u een onafhankelijke deskundige inschakelen via de regeling
-      deskundigenbijstand. In sommige gevallen vergoedt het IMG de kosten
-      hiervan.
-    </p>
-    <br />
-    <p>
-      U kunt de aanvraag doen door in te loggen met DigiD op Mijn Dossier via:
-    </p>
-    <a
-      href="https://www.schadedoormijnbouw.nl/mijn-dossier"
-      className=" underline text-blue-500"
-    >
-      https://www.schadedoormijnbouw.nl/mijn-dossier
-    </a>
-    <br />
-    <p>
-      Open uw zaaknummer en vraag binnen uw dossier deskundigenbijstand aan.
-      Daarbij kunt u een onafhankelijke deskundige selecteren uit de beschikbare
-      lijst. Na goedkeuring van het IMG kan de deskundige uw dossier beoordelen.
-    </p>
-    <br />
-    <p>
-      Voor vragen over de regeling of de voorwaarden kunt u contact opnemen met
-      het IMG zelf. Zij kunnen u informeren over de actuele regels en
-      mogelijkheden.
-    </p>
-  </>
-);
 
 export default function ImgTraject() {
   return (
@@ -114,11 +89,66 @@ export default function ImgTraject() {
         color="bg-[rgb(251,242,243)]"
       />
       <ServiceCards services={services} />
-      <Intro
-        title="Regeling Deskundigenbijstand IMG"
-        className="text-start max-w-full"
-        message={message}
-      />
+      <section className="bg-gray-200">
+        <TitleBox title="Regeling Deskundigenbijstand IMG" />
+        <div className="container m-auto flex flex-col px-5 py-10 lg:px-20">
+          <div className="mx-auto w-full max-w-5xl rounded-2xl bg-white p-8 shadow-[0_8px_30px_rgba(0,0,0,0.1)] md:p-10">
+            <div className="flex flex-col gap-10">
+              <div>
+                <h3 className="text-base font-bold leading-snug text-[#1e3a5f] md:text-lg">
+                  Deskundigenbijstand
+                </h3>
+                <p className="mt-2 text-sm leading-[1.5] text-[#4a5568]">
+                  Bij een schadeprocedure via het Instituut Mijnbouwschade
+                  Groningen (IMG) kunt u een onafhankelijke deskundige
+                  inschakelen via de regeling deskundigenbijstand. In sommige
+                  gevallen vergoedt het IMG de kosten hiervan.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-base font-bold leading-snug text-[#1e3a5f] md:text-lg">
+                  Aanvragen via Mijn Dossier
+                </h3>
+                <p className="mt-2 text-sm leading-[1.5] text-[#4a5568]">
+                  U kunt de aanvraag doen door in te loggen met DigiD op Mijn
+                  Dossier.
+                </p>
+                <div className="mt-4">
+                  <a
+                    href={MIJN_DOSSIER_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={REGELING_TILE_BADGE_CLASS}
+                  >
+                    Open Mijn Dossier
+                  </a>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-base font-bold leading-snug text-[#1e3a5f] md:text-lg">
+                  Procedure in uw dossier
+                </h3>
+                <p className="mt-2 text-sm leading-[1.5] text-[#4a5568]">
+                  Open uw zaaknummer en vraag binnen uw dossier
+                  deskundigenbijstand aan. Daarbij kunt u een onafhankelijke
+                  deskundige selecteren uit de beschikbare lijst. Na goedkeuring
+                  van het IMG kan de deskundige uw dossier beoordelen.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-base font-bold leading-snug text-[#1e3a5f] md:text-lg">
+                  Vragen over de regeling
+                </h3>
+                <p className="mt-2 text-sm leading-[1.5] text-[#4a5568]">
+                  Voor vragen over de regeling of de voorwaarden kunt u contact
+                  opnemen met het IMG zelf. Zij kunnen u informeren over de
+                  actuele regels en mogelijkheden.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

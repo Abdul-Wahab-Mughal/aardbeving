@@ -21,6 +21,8 @@
 
   --accent: rgb(54, 80, 97);
 
+  --footer-legal-bar-bg: #3b505d;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

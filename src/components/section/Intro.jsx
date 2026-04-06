@@ -2,6 +2,68 @@ import React from "react";
 import TitleBox from "../ui/titleBox";
 import { ChevronRight } from "lucide-react";
 
+const ICON_CLASS = "h-6 w-6 text-black/55";
+
+function RegelingTile({ bt }) {
+  return (
+    <div
+      className={`flex h-full min-h-0 w-full flex-col rounded-md border border-black/5 bg-white px-5 py-5 text-left shadow-[0_6px_16px_rgba(0,0,0,0.06)] ${
+        bt.className ?? ""
+      }`}
+    >
+      <div className="flex items-start gap-3 pb-2">
+        <div className="flex flex-col items-center pt-0.5" aria-hidden>
+          <bt.icon className={ICON_CLASS} strokeWidth={1.6} />
+          <span className="mt-1 h-px w-7 bg-black/25" />
+        </div>
+        {bt.title ? (
+          <h4 className="font-display text-base font-normal text-black/80">
+            {bt.title}
+          </h4>
+        ) : (
+          <div className="h-6" />
+        )}
+      </div>
+      <div className="flex min-h-0 flex-1 flex-col text-sm leading-relaxed text-black/55">
+        {bt.message}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Regeling tiles: tiles 1–3 share one grid row so they match height; tile 4 sits
+ * beside on lg (taller via its own min-h), full width below on smaller screens.
+ */
+export function RegelingTileGrid({ boxText }) {
+  if (!boxText?.length) return null;
+
+  if (boxText.length === 4) {
+    const firstThree = boxText.slice(0, 3);
+    const fourth = boxText[3];
+    return (
+      <div className="flex w-full flex-col gap-3 lg:flex-row lg:items-start">
+        <div className="grid w-full grid-cols-1 gap-3 md:grid-cols-3 lg:min-w-0 lg:flex-[3]">
+          {firstThree.map((bt, index) => (
+            <RegelingTile key={index} bt={bt} />
+          ))}
+        </div>
+        <div className="w-full min-w-0 shrink-0 lg:flex-1">
+          <RegelingTile bt={fourth} />
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="grid w-full grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
+      {boxText.map((bt, index) => (
+        <RegelingTile key={index} bt={bt} />
+      ))}
+    </div>
+  );
+}
+
 export default function Intro({
   title,
   subtitle,
@@ -18,24 +80,10 @@ export default function Intro({
         className={`py-5 md:py-12 max-w-5xl m-auto text-center space-y-4 px-5 lg:px-20 text-black text-lg whitespace-pre-line ${className}`}
       >
         {subtitle && <p className=" leading-relaxed font-bold">{subtitle}</p>}
-        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2.5 w-full">
-          {boxText?.map((bt, index) => (
-            <div
-              key={index}
-              className=" border rounded-xl px-2.5 py-5 space-y-2.5 w-full"
-            >
-              <div className="flex gap-2.5">
-                <span className=" w-8 h-8 flex justify-center items-center bg-[--background_box] rounded-full text-white text-xl">
-                  {index + 1}
-                </span>
-                <bt.icon size={50} />
-              </div>
-              <h4 className="font-bold">{bt.title}</h4>
-              <div className="text-sm whitespace">{bt.message}</div>
-            </div>
-          ))}
-        </div>
-        {message && <div className="max-sm:text-sm leading-relaxed">{message}</div>}
+        <RegelingTileGrid boxText={boxText} />
+        {message && (
+          <div className="max-sm:text-sm leading-relaxed">{message}</div>
+        )}
       </div>
       {box && (
         <div className="px-5">

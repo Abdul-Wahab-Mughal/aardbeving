@@ -1,0 +1,19 @@
+import React from "react";
+
+export default function Bannar({ title, image }) {
+  return (
+    <section className="relative h-[88vh] min-h-[500px] max-h-[550px] flex items-center justify-center">
+      <img
+        src={image}
+        alt="Aardbevingsschade Groningen"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-black/25" />
+      <div className="relative z-10 text-center px-4">
+        <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight max-w-6xl">
+          {title}
+        </h1>
+      </div>
+    </section>
+  );
+}

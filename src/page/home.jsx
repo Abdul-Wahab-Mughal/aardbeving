@@ -16,10 +16,7 @@ export default function Index() {
           content="Onafhankelijke technische dossieranalyse bij aardbevingsschade in Groningen."
         />
       </Helmet>
-      <Bannar
-        title="Onafhankelijke technische dossieranalyse bij schade, versterking en vastgelopen dossiers."
-        image={heroBg}
-      />
+      <Bannar title="Laat uw dossier niet vastlopen." image={heroBg} />
       <Traject />
       <Intro
         color="bg-gray-200"

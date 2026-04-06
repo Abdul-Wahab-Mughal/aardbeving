@@ -54,7 +54,7 @@ export default function Testimonials({ title }) {
                 </p>
                 <Link
                   to="/contact"
-                  className={`text-sm font-medium mt-auto text-[--border] hover:opacity-80 transition-opacity flex border px-2 py-1 w-fit border-[--border] hover:border-orange-500 hover:text-orange-500 max-md:m-auto`}
+                  className={`text-sm font-medium mt-auto text-[--border] hover:opacity-80 transition-all duration-300 flex border px-2 py-1 w-fit border-[--border] hover:border-orange-500 hover:text-orange-500 hover:shadow-[0_0_0_3px_rgba(249,115,22,0.18),0_10px_22px_rgba(249,115,22,0.22)] max-md:m-auto`}
                 >
                   Lees meer
                 </Link>

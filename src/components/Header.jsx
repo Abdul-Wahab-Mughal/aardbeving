@@ -8,7 +8,7 @@ export default function Header({ navItems }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white backdrop-blur border-b-[15px] border-[--border]">
+    <nav className="sticky top-0 z-50 bg-white backdrop-blur">
       <div className=" px-5 lg:px-10 xl:px-20 flex justify-between m-auto container">
         <Link to="/" className="flex-shrink-0 pt-2">
           <img

@@ -12,6 +12,7 @@ import VastlopendeTrajecten from "./page/VastlopendeTrajecten";
 import OverAAB from "./page/OverAAB";
 import Contact from "./page/Contact";
 import NotFound from "./page/NotFound";
+import LegalDocument from "./page/LegalDocument";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -39,6 +40,20 @@ function App() {
         />
         <Route path="/over-aab" element={<OverAAB />} />
         <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/privacyverklaring"
+          element={<LegalDocument pageId="privacyverklaring" />}
+        />
+        <Route
+          path="/cookieverklaring"
+          element={<LegalDocument pageId="cookieverklaring" />}
+        />
+        <Route path="/disclaimer" element={<LegalDocument pageId="disclaimer" />} />
+        <Route path="/impressum" element={<LegalDocument pageId="impressum" />} />
+        <Route
+          path="/algemene-voorwaarden"
+          element={<LegalDocument pageId="algemene-voorwaarden" />}
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer navItems={navItems} />

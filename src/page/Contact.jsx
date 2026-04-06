@@ -148,7 +148,7 @@ export default function Context() {
                 bestaande regelingen. Indien relevant informeren wij u hierover.
               </p>
               <button
-                className=" rounded-full bg-[--background_box] text-white py-2 px-5 flex gap-2.5"
+                className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[--background_box] px-6 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-orange-500 hover:shadow-[0_0_0_3px_rgba(249,115,22,0.22),0_14px_28px_rgba(249,115,22,0.28)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/60 focus-visible:ring-offset-2"
                 onClick={() => scrollup()}
               >
                 Contact

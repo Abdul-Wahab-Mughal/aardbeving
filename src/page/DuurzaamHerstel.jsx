@@ -8,7 +8,17 @@ import dh2 from "@/assets/dh2.png";
 import dh3 from "@/assets/dh3.png";
 import Intro from "@/components/section/Intro";
 import { Helmet } from "react-helmet-async";
-import { BadgeEuroIcon, Check, FileCheck2, FileSearch2 } from "lucide-react";
+import {
+  BadgeEuroIcon,
+  CheckCircle2,
+  FileCheck2,
+  FileSearch2,
+  Leaf,
+  RefreshCw,
+  ScrollText,
+  Waypoints,
+} from "lucide-react";
+import { REGELING_TILE_BADGE_CLASS } from "@/lib/regelingTiles";
 
 const points = [
   {
@@ -36,21 +46,25 @@ const points = [
 
 const services = [
   {
+    icon: Leaf,
     title: "Onafhankelijk technisch perspectief op duurzaam herstel",
     description:
       "Wij geven een onafhankelijke technische visie op wat écht duurzaam en toekomstbestendig herstel inhoudt voor uw specifieke woning",
   },
   {
+    icon: Waypoints,
     title: "Inzicht in haalbaarheid en samenhang",
     description:
       "Wij brengen in beeld welke oplossingen technisch haalbaar zijn en hoe verschillende maatregelen met elkaar samenhangen, zodat keuzes logisch en uitvoerbaar zijn.",
   },
   {
+    icon: RefreshCw,
     title: "Voorkomen van eindeloze herstelcycli",
     description:
       "Door te focussen op structurele oorzaken helpen wij voorkomen dat u vastloopt in steeds terugkerende herstelrondes zonder blijvend resultaat.",
   },
   {
+    icon: ScrollText,
     title: "Onderbouwing van toekomstbestendige keuzes",
     description:
       "Wij leveren een duidelijke technische onderbouwing voor keuzes die niet alleen vandaag werken, maar ook op de langere termijn verstandig zijn.",
@@ -105,28 +119,66 @@ const boxText = [
   {
     icon: FileSearch2,
     title: "",
-    message:
-      "In sommige situaties kunnen bewoners de kosten voor een onafhankelijke deskundige vergoed krijgen. Welke regeling van toepassing is, hangt af van het traject waarin uw woning zit.",
+    className: "lg:min-h-[240px]",
+    message: (
+      <p className="text-xs leading-relaxed text-black/55">
+        In sommige situaties kunnen bewoners de kosten voor een onafhankelijke
+        deskundige vergoed krijgen. Welke regeling van toepassing is, hangt af
+        van het traject waarin uw woning zit.
+      </p>
+    ),
   },
   {
     icon: BadgeEuroIcon,
     title: "Schade – IMG",
-    message:
-      "Heeft u een schadeprocedure bij het Instituut Mijnbouwschade Groningen (IMG)? Dan kunt u mogelijk gebruikmaken van de regeling Deskundigenbijstand. Hiermee kunt u een eigen onafhankelijke deskundige inschakelen om een schadebeoordeling of besluit te laten toetsen. Aanvragen verloopt via het IMG en moet meestal vooraf worden goedgekeurd.",
+    className: "lg:min-h-[240px]",
+    message: (
+      <p className="text-xs leading-relaxed text-black/55">
+        Heeft u een schadeprocedure bij het Instituut Mijnbouwschade Groningen
+        (IMG)? Dan kunt u mogelijk gebruikmaken van de regeling
+        Deskundigenbijstand. Hiermee kunt u een eigen onafhankelijke deskundige
+        inschakelen om een schadebeoordeling of besluit te laten toetsen.
+        Aanvragen verloopt via het IMG en moet meestal vooraf worden
+        goedgekeurd.
+      </p>
+    ),
   },
   {
-    icon: Check,
+    icon: CheckCircle2,
     title: "Versterking – NCG",
-    message:
-      "Valt uw woning onder de versterkingsopgave van de Nationaal Coördinator Groningen (NCG)? Dan kunt u gebruikmaken van de regeling Onafhankelijk Advies. Hiermee kunt u een onafhankelijke adviseur laten meekijken met bijvoorbeeld een versterkingsadvies of belangrijke keuzes in het traject.",
+    className: "lg:min-h-[240px]",
+    message: (
+      <p className="text-xs leading-relaxed text-black/55">
+        Valt uw woning onder de versterkingsopgave van de Nationaal Coördinator
+        Groningen (NCG)? Dan kunt u gebruikmaken van de regeling Onafhankelijk
+        Advies. Hiermee kunt u een onafhankelijke adviseur laten meekijken met
+        bijvoorbeeld een versterkingsadvies of belangrijke keuzes in het
+        traject.
+      </p>
+    ),
   },
   {
     icon: FileCheck2,
     title: "Hoe komt u in aanmerking?",
-    message: `1.Controleer of uw woning in een IMG-schadetraject of NCG-versterkingstraject zit.
-    2.Kies een onafhankelijke deskundige.
-    3.Vraag de regeling aan via IMG of NCG.
-    4.Na goedkeuring kan het advies worden uitgevoerd.`,
+    className: "lg:min-h-[320px] flex flex-col",
+    message: (
+      <>
+        <div className="flex-1 space-y-1 text-xs leading-relaxed text-black/55">
+          <div>
+            1. Controleer of uw woning in een IMG-schadetraject of
+            NCG-versterkingstraject zit.
+          </div>
+          <div>2. Kies een onafhankelijke deskundige.</div>
+          <div>3. Vraag de regeling aan via IMG of NCG.</div>
+          <div>4. Na goedkeuring kan het advies worden uitgevoerd.</div>
+        </div>
+        <div className="mt-auto pt-4">
+          <a href="/contact" className={REGELING_TILE_BADGE_CLASS}>
+            Neem contact op
+          </a>
+        </div>
+      </>
+    ),
   },
 ];
 
@@ -150,7 +202,7 @@ export default function DuurzaamHerstel() {
       <Intro
         title="Vergoeding voor onafhankelijk advies"
         className="text-start max-w-full"
-        // message={message}
+        color="bg-gray-200"
         boxText={boxText}
       />
     </main>

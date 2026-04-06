@@ -9,7 +9,17 @@ import vt3 from "@/assets/vt3.png";
 import vt4 from "@/assets/vt4.png";
 import Intro from "@/components/section/Intro";
 import { Helmet } from "react-helmet-async";
-import { BadgeEuroIcon, Check, FileCheck2, FileSearch2 } from "lucide-react";
+import {
+  BadgeEuroIcon,
+  CheckCircle2,
+  Compass,
+  FileCheck2,
+  FileSearch2,
+  Layers2,
+  Map,
+  UserRound,
+} from "lucide-react";
+import { REGELING_TILE_BADGE_CLASS } from "@/lib/regelingTiles";
 
 const points = [
   {
@@ -44,105 +54,93 @@ const points = [
 
 const services = [
   {
+    icon: UserRound,
     title: "Onafhankelijk technisch aanspreekpunt",
     description:
       "Wij fungeren als uw vaste, onafhankelijke technische sparringpartner in alle trajecten rondom uw woning.",
   },
   {
+    icon: Map,
     title: "Duiding van mogelijkheden en vervolgstappen",
     description:
       "Wij maken inzichtelijk welke opties u heeft en wat logische vervolgstappen zijn, zodat u gericht verder kunt.",
   },
   {
+    icon: Layers2,
     title: "Overzicht en samenhang aanbrengen",
     description:
       "Wij brengen structuur in uw dossier en laten zien hoe verschillende besluiten en adviezen met elkaar samenhangen.",
   },
   {
+    icon: Compass,
     title: "Rust en richting in complexe situaties",
     description:
       "Wij helpen de situatie te ontrafelen en bieden duidelijke handvatten, zodat u weer grip en vertrouwen krijgt.",
   },
 ];
 
-const message = (
-  <>
-    <p>Vergoeding voor onafhankelijk advies</p>
-    <p>
-      In sommige situaties kunnen bewoners de kosten voor een onafhankelijke
-      deskundige vergoed krijgen. Welke regeling van toepassing is, hangt af van
-      het traject waarin uw woning zit.
-    </p>
-    <br />
-    <p>Schade – IMG</p>
-    <p>
-      Heeft u een schadeprocedure bij het Instituut Mijnbouwschade Groningen
-      (IMG)? Dan kunt u mogelijk gebruikmaken van de regeling
-      Deskundigenbijstand. Hiermee kunt u een eigen onafhankelijke deskundige
-      inschakelen om een schadebeoordeling of besluit te laten toetsen.
-      Aanvragen verloopt via het IMG en moet meestal vooraf worden goedgekeurd.
-    </p>
-    <br />
-    <p>Versterking – NCG</p>
-    <p>
-      Valt uw woning onder de versterkingsopgave van de Nationaal Coördinator
-      Groningen (NCG)? Dan kunt u gebruikmaken van de regeling Onafhankelijk
-      Advies. Hiermee kunt u een onafhankelijke adviseur laten meekijken met
-      bijvoorbeeld een versterkingsadvies of belangrijke keuzes in het traject.
-    </p>
-    <br />
-    <p>Hoe komt u in aanmerking?</p>
-    <ul className="pl-5">
-      <li>
-        1.Controleer of uw woning in een IMG-schadetraject of
-        NCG-versterkingstraject zit.
-      </li>
-      <li>2.Kies een onafhankelijke deskundige.</li>
-      <li>3.Vraag de regeling aan via IMG of NCG.</li>
-      <li>4.Na goedkeuring kan het advies worden uitgevoerd.</li>
-    </ul>
-    <br />
-    <p>
-      Voor vragen over de voorwaarden of het aanvragen van de regeling kunt u
-      contact opnemen met IMG of NCG zelf. Zij kunnen u informeren over de
-      mogelijkheden en de actuele regels.
-    </p>
-  </>
-);
-
 const boxText = [
   {
     icon: FileSearch2,
-    title: "Vergoeding voor onafhankelijk advies",
-    message:
-      "In sommige situaties kunnen bewoners de kosten voor een onafhankelijke deskundige vergoed krijgen. Welke regeling van toepassing is, hangt af van het traject waarin uw woning zit.",
+    title: "",
+    className: "lg:min-h-[240px]",
+    message: (
+      <p className="text-xs leading-relaxed text-black/55">
+        In sommige situaties kunnen bewoners de kosten voor een onafhankelijke
+        deskundige vergoed krijgen. Welke regeling van toepassing is, hangt af
+        van het traject waarin uw woning zit.
+      </p>
+    ),
   },
   {
     icon: BadgeEuroIcon,
     title: "Schade – IMG",
-    message:
-      "Heeft u een schadeprocedure bij het Instituut Mijnbouwschade Groningen (IMG)? Dan kunt u mogelijk gebruikmaken van de regeling Deskundigenbijstand. Hiermee kunt u een eigen onafhankelijke deskundige inschakelen om een schadebeoordeling of besluit te laten toetsen. Aanvragen verloopt via het IMG en moet meestal vooraf worden goedgekeurd.",
+    className: "lg:min-h-[240px]",
+    message: (
+      <p className="text-xs leading-relaxed text-black/55">
+        Heeft u een schadeprocedure bij het Instituut Mijnbouwschade Groningen
+        (IMG)? Dan kunt u mogelijk gebruikmaken van de regeling
+        Deskundigenbijstand. Hiermee kunt u een eigen onafhankelijke deskundige
+        inschakelen om een schadebeoordeling of besluit te laten toetsen.
+        Aanvragen verloopt via het IMG en moet meestal vooraf worden
+        goedgekeurd.
+      </p>
+    ),
   },
   {
-    icon: Check,
+    icon: CheckCircle2,
     title: "Versterking – NCG",
-    message:
-      "Valt uw woning onder de versterkingsopgave van de Nationaal Coördinator Groningen (NCG)? Dan kunt u gebruikmaken van de regeling Onafhankelijk Advies. Hiermee kunt u een onafhankelijke adviseur laten meekijken met bijvoorbeeld een versterkingsadvies of belangrijke keuzes in het traject.",
+    className: "lg:min-h-[240px]",
+    message: (
+      <p className="text-xs leading-relaxed text-black/55">
+        Valt uw woning onder de versterkingsopgave van de Nationaal Coördinator
+        Groningen (NCG)? Dan kunt u gebruikmaken van de regeling Onafhankelijk
+        Advies. Hiermee kunt u een onafhankelijke adviseur laten meekijken met
+        bijvoorbeeld een versterkingsadvies of belangrijke keuzes in het
+        traject.
+      </p>
+    ),
   },
   {
     icon: FileCheck2,
     title: "Hoe komt u in aanmerking?",
+    className: "lg:min-h-[320px] flex flex-col",
     message: (
       <>
-        <ul>
-          <li>
-            1.Controleer of uw woning in een IMG-schadetraject of
+        <div className="flex-1 space-y-1 text-xs leading-relaxed text-black/55">
+          <div>
+            1. Controleer of uw woning in een IMG-schadetraject of
             NCG-versterkingstraject zit.
-          </li>
-          <li>2.Kies een onafhankelijke deskundige.</li>
-          <li>3.Vraag de regeling aan via IMG of NCG.</li>
-          <li>4.Na goedkeuring kan het advies worden uitgevoerd.</li>
-        </ul>
+          </div>
+          <div>2. Kies een onafhankelijke deskundige.</div>
+          <div>3. Vraag de regeling aan via IMG of NCG.</div>
+          <div>4. Na goedkeuring kan het advies worden uitgevoerd.</div>
+        </div>
+        <div className="mt-auto pt-4">
+          <a href="/contact" className={REGELING_TILE_BADGE_CLASS}>
+            Neem contact op
+          </a>
+        </div>
       </>
     ),
   },
@@ -167,8 +165,9 @@ export default function VastlopendeTrajecten() {
       <ServiceCards services={services} />
       <Intro
         title="Extra ondersteuning bij vastlopende trajecten"
+        subtitle="Vergoeding voor onafhankelijk advies"
         className="text-start max-w-full"
-        // message={message}
+        color="bg-gray-200"
         boxText={boxText}
       />
     </main>

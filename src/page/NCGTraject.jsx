@@ -9,7 +9,19 @@ import ncg3 from "@/assets/ncg3.png";
 import ncg4 from "@/assets/ncg4.png";
 import Intro from "@/components/section/Intro";
 import { Helmet } from "react-helmet-async";
-import { BadgeEuroIcon, Check, FileCheck2, FileSearch2 } from "lucide-react";
+import {
+  BookOpen,
+  CheckCircle2,
+  FileCheck2,
+  Files,
+  LayoutGrid,
+  Link2,
+  ShieldCheck,
+} from "lucide-react";
+import { REGELING_TILE_BADGE_CLASS } from "@/lib/regelingTiles";
+
+const NCG_REGELING_URL =
+  "https://www.nationaalcoordinatorgroningen.nl/vergoedingen/eigenaren/advies/ncg";
 
 const points = [
   {
@@ -44,21 +56,25 @@ const points = [
 
 const services = [
   {
+    icon: LayoutGrid,
     title: "Woning brede beoordeling van versterkingsadviezen",
     description:
       "Versterkingsadviezen gaan vaak over afzonderlijke onderdelen van een woning, terwijl alles met elkaar samenhangt. Wij bekijken uw woning als geheel en beoordelen hoe verschillende maatregelen op elkaar inwerken. Zo krijgt u een compleet en samenhangend beeld van wat nodig en verstandig is.",
   },
   {
+    icon: BookOpen,
     title: "Uitleg en duiding in begrijpelijke taal",
     description:
       "Rapporten en technische termen kunnen ingewikkeld en verwarrend zijn. Wij vertalen complexe informatie naar heldere, begrijpelijke taal. Zo weet u waar u aan toe bent en wat adviezen voor u in de praktijk betekenen.",
   },
   {
+    icon: Link2,
     title: "Samenhang tussen schade, versterking en toekoms",
     description:
       "Schadeherstel, versterking en uw woonwensen voor de toekomst staan niet los van elkaar. Wij helpen u om deze aspecten in samenhang te bekijken, zodat beslissingen nu ook passen bij hoe u straks wilt wonen.",
   },
   {
+    icon: Files,
     title: "Ondersteuning bij keuzes en gesprekken",
     description:
       "Belangrijke beslissingen over uw woning kunnen spannend en overweldigend zijn. Wij denken met u mee, helpen opties afwegen en ondersteunen u bij gesprekken met betrokken partijen, zodat u met vertrouwen uw keuzes kunt maken.",
@@ -95,10 +111,10 @@ const message = (
       de NCG:
     </p>
     <a
-      href="https://www.nationaalcoordinatorgroningen.nl/vergoedingen/eigenaren/advies/ncg"
+      href={NCG_REGELING_URL}
       className=" underline text-blue-500 break-words"
     >
-      https://www.nationaalcoordinatorgroningen.nl/vergoedingen/eigenaren/advies/ncg
+      {NCG_REGELING_URL}
     </a>
     <p>
       Wilt u weten wat een onafhankelijke beoordeling in uw situatie kan
@@ -109,48 +125,66 @@ const message = (
 
 const boxText = [
   {
-    icon: FileSearch2,
+    icon: ShieldCheck,
     title: "",
-    message:
-      "Valt uw woning onder de versterkingsopgave van de NCG? Dan kunt u op kosten van de NCG een onafhankelijke adviseur inschakelen om een versterkingsadvies technisch te laten beoordelen.",
+    className: "lg:min-h-[240px]",
+    message: (
+      <p className="text-xs leading-relaxed text-black/55">
+        Valt uw woning onder de versterkingsopgave van de NCG? Dan kunt u op
+        kosten van de NCG een onafhankelijke adviseur inschakelen om een
+        versterkingsadvies technisch te laten beoordelen.
+      </p>
+    ),
   },
   {
-    icon: BadgeEuroIcon,
+    icon: Files,
     title: "",
-    message:
-      " Deze regeling is bedoeld voor situaties waarin u twijfelt aan de inhoud, onderbouwing of gevolgen van een versterkingsrapport. De adviseur moet onafhankelijk zijn en mag niet eerder betrokken zijn geweest bij uw dossier.",
+    className: "lg:min-h-[240px]",
+    message: (
+      <p className="text-xs leading-relaxed text-black/55">
+        Deze regeling is bedoeld voor situaties waarin u twijfelt aan de inhoud,
+        onderbouwing of gevolgen van een versterkingsrapport. De adviseur moet
+        onafhankelijk zijn en mag niet eerder betrokken zijn geweest bij uw
+        dossier.
+      </p>
+    ),
   },
   {
-    icon: Check,
+    icon: CheckCircle2,
     title: "Hoe vraagt u dit aan?",
+    className: "lg:min-h-[240px]",
     message: (
       <>
-        <ul>
-          <li>1.Kies een onafhankelijke adviseur</li>
-          <li>2.Vraag de vergoeding aan via de NCG-website.</li>
-          <li>3.Na goedkeuring kan de beoordeling worden uitgevoerd.</li>
-          <li>
-            4.De kosten worden vergoed volgens de voorwaarden van de regeling.
-          </li>
-        </ul>
+        <div className="space-y-1 text-xs leading-relaxed text-black/55">
+          <div>1. Kies een onafhankelijke adviseur</div>
+          <div>2. Vraag de vergoeding aan via de NCG-website</div>
+          <div>3. Na goedkeuring kan de beoordeling worden uitgevoerd</div>
+          <div>4. De kosten worden vergoed volgens de voorwaarden van de regeling</div>
+        </div>
       </>
     ),
   },
   {
     icon: FileCheck2,
     title: "Hoe komt u in aanmerking?",
+    className:
+      "lg:min-h-[320px] flex flex-col",
     message: (
       <>
-        <a
-          href="https://www.nationaalcoordinatorgroningen.nl/vergoedingen/eigenaren/advies/ncg"
-          className=" underline text-blue-500 break-words"
-        >
-          https://www.nationaalcoordinatorgroningen.nl/vergoedingen/eigenaren/advies/ncg
-        </a>
-        <p>
+        <p className="flex-1">
           Wilt u weten wat een onafhankelijke beoordeling in uw situatie kan
           betekenen? Neem dan contact met ons op voor een eerste verkenning.
         </p>
+        <div className="mt-auto pt-4">
+          <a
+            href={NCG_REGELING_URL}
+            target="_blank"
+            rel="noreferrer"
+            className={REGELING_TILE_BADGE_CLASS}
+          >
+            Bekijk regeling op NCG
+          </a>
+        </div>
       </>
     ),
   },
@@ -178,6 +212,7 @@ export default function NCGTraject() {
         className="text-start max-w-full"
         // message={message}
         boxText={boxText}
+        color="bg-gray-200"
       />
     </main>
   );

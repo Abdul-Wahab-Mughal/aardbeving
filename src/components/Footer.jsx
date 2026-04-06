@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import { ArrowUp } from "lucide-react";
+import { LEGAL_FOOTER_LINKS } from "@/legal/footerLinks";
 
 export default function Footer({ navItems }) {
   function scrollup() {
@@ -75,7 +76,24 @@ export default function Footer({ navItems }) {
           <ArrowUp size={20} />
         </div>
       </div>
-      <div className="bg-[--background_box] h-8" />
+      <div
+        className="bg-[var(--footer-legal-bar-bg)] md:py-2.5 relative overflow-hidden"
+        role="navigation"
+        aria-label="Juridische informatie"
+      >
+        <ul className="container m-auto flex flex-wrap items-center justify-center gap-x-6 gap-y-2 px-4 py-3.5 text-[0.8125rem] font-normal tracking-wide text-white sm:justify-evenly sm:gap-x-4">
+          {LEGAL_FOOTER_LINKS.map(({ to, label }) => (
+            <li key={to}>
+              <Link
+                to={to}
+                className="font-sans text-white transition-colors hover:text-white/85 hover:underline underline-offset-2"
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </footer>
   );
 }
